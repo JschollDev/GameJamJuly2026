@@ -1,68 +1,107 @@
-1. **Project / Version Control** — repo structure, Godot config, project organization, Git settings.
-    - [ ]  Create the Godot project and Git repository
-    - [ ]  Set up base folders and naming conventions
-    - [ ]  Configure `.gitignore`, `.gitattributes`, and tracked project settings
-    - [ ]  Confirm the project opens and syncs correctly from Git
-    - [ ]  Create a clean starting commit / jam-ready baseline
-2. **Settings / Global Configuration** — shared config, audio/display/input preferences, global values.
-    - [ ]  Create the global settings/config structure
-    - [ ]  Add only required setting categories
-    - [ ]  Connect settings to the systems they control
-    - [ ]  Add persistence between launches
-    - [ ]  Verify settings apply and restore correctly
-3. **Game Data / Resources** — reusable data structures and configurable Godot resources.
-    - [ ] Testing Textures / Images (I think these were made by Kenny)
-	- [ ]  Identify what game information should be data-driven
-    - [ ]  Create the minimum required resource/data structures
-    - [ ]  Move shared values out of individual scripts where useful
-    - [ ]  Connect gameplay systems to those resources
-    - [ ]  Clean up and remove data structures that are not actually being used
-4. **Player Control / Interaction** — core input handling and how the player acts in the world.
-    - [ ]  Define required player actions
-    - [ ]  Map keyboard and controller inputs
-    - [ ]  Implement basic player control
-    - [ ]  Add required interaction/action behavior
-    - [ ]  Test responsiveness and remove unnecessary complexity
-5. **Core Gameplay Systems** — the actual mechanics the game is built around.
-    - [ ]  Define the minimum playable mechanic
-    - [ ]  Build the first functional version
-    - [ ]  Connect supporting gameplay rules
-    - [ ]  Playtest and adjust the mechanic
-    - [ ]  Lock the gameplay scope and stop adding systems
-6. **Game Flow / State** — menu, active play, pause, restart, win/loss, transitions.
-    - [ ]  Establish the major game states
-    - [ ]  Connect starting and entering gameplay
-    - [ ]  Add pause and resume behavior
-    - [ ]  Add win/loss and restart behavior
-    - [ ]  Test the complete start-to-finish game loop
-7. **Scene / Level Structure** — how gameplay spaces, levels, or encounters are organized.
-    - [ ]  Establish the base scene hierarchy
-    - [ ]  Build the first playable environment
-    - [ ]  Organize gameplay objects and reusable scene pieces
-    - [ ]  Complete the required level/content layout
-    - [ ]  Test scene loading, restarting, and progression
-8. **UI / HUD** — menus, prompts, HUD elements, and player-facing feedback.
-    - [ ]  Create the primary menu structure
-    - [ ]  Add the minimum gameplay HUD
-    - [ ]  Add keyboard/controller prompts where needed
-    - [ ]  Connect UI to actual gameplay state/data
-    - [ ]  Clean up readability, navigation, and visual consistency
-9. **Audio System** — music, gameplay sounds, UI sounds, routing, and volume control.
-    - [ ]  Establish audio buses/categories
-    - [ ]  Add essential gameplay sounds
-    - [ ]  Add essential UI sounds
-    - [ ]  Add music/ambient audio if appropriate
-    - [ ]  Balance levels and confirm settings control everything correctly
-10. **Visual / Art Foundation** — common materials, UI theme, shaders, effects, reusable visual assets.
-	- [ ]  Establish the game's basic visual direction
-	- [ ]  Replace temporary assets that materially affect readability
-	- [ ]  Apply consistent materials, colors, and UI styling
-	- [ ]  Add only the effects that improve gameplay feedback
-	- [ ]  Perform a final visual consistency/polish pass
+# Game Jam Project
 
-11. **Build / Export / Submission** — export presets, build testing, packaging, and final jam submission.
-	- [ ]  Configure export presets early
-	- [ ]  Produce and test an initial standalone build
-	- [ ]  Re-test builds as major systems are completed
-	- [ ]  Prepare final executable/package and submission materials
-	- [ ]  Perform a clean-machine-style final test and submit
+## First 2 Hours — Planning
+
+Before development begins, discuss and lock down the following:
+
+* [ ] **Concept + Theme** — What are we making, and how does it use the jam theme?
+* [ ] **Core Hook** — What makes the game interesting or memorable?
+* [ ] **Core Gameplay Loop** — What does the player repeatedly do?
+* [ ] **Scope** — Define the minimum game and what we will explicitly *not* build.
+* [ ] **Player Controls** — Required actions and gameplay/UI input behavior.
+* [ ] **Game Flow** — Start → Play → Win/Lose → Restart.
+* [ ] **Art + Audio Direction** — Visual style, sound direction, and asset sources.
+* [ ] **Technical Baseline** — Godot version, target platform, Git/project structure.
+* [ ] **Schedule** — Set deadlines for playable, content lock, polish, and submission.
+
+---
+
+## Development Checklist
+
+### 1. Project / Version Control
+
+* [ ] Create Godot project and Git repository
+* [ ] Establish folders and naming conventions
+* [ ] Configure `.gitignore` and `.gitattributes`
+* [ ] Verify Git sync
+* [ ] Create clean jam baseline commit
+
+### 2. Settings / Global Configuration
+
+* [ ] Create global configuration structure
+* [ ] Add required settings only
+* [ ] Connect settings to relevant systems
+* [ ] Add persistence where necessary
+* [ ] Verify settings restore correctly
+
+### 3. Game Data / Resources
+
+* [ ] Add testing textures/images
+* [ ] Identify data-driven information
+* [ ] Create required Resources/data structures
+* [ ] Connect gameplay systems to Resources
+* [ ] Remove unused structures
+
+### 4. Player Control / Interaction
+
+* [ ] Define player actions
+* [ ] Map keyboard/controller inputs
+* [ ] Implement player control
+* [ ] Implement required interactions
+* [ ] Test responsiveness and simplify
+
+### 5. Core Gameplay Systems
+
+* [ ] Define minimum playable mechanic
+* [ ] Build functional version
+* [ ] Connect supporting rules
+* [ ] Playtest and adjust
+* [ ] Lock gameplay scope
+
+### 6. Game Flow / State
+
+* [ ] Establish major game states
+* [ ] Start → gameplay
+* [ ] Pause/resume
+* [ ] Win/loss/restart
+* [ ] Test complete game loop
+
+### 7. Scene / Level Structure
+
+* [ ] Establish scene hierarchy
+* [ ] Build first playable environment
+* [ ] Organize reusable scene pieces
+* [ ] Complete required content
+* [ ] Test loading/restarting/progression
+
+### 8. UI / HUD
+
+* [ ] Primary menu structure
+* [ ] Minimum gameplay HUD
+* [ ] Input prompts where required
+* [ ] Connect UI to gameplay
+* [ ] Readability/navigation polish
+
+### 9. Audio
+
+* [ ] Establish audio buses
+* [ ] Gameplay sounds
+* [ ] UI sounds
+* [ ] Music/ambience where appropriate
+* [ ] Final balance
+
+### 10. Visual / Art Foundation
+
+* [ ] Establish visual direction
+* [ ] Replace important placeholders
+* [ ] Apply consistent styling
+* [ ] Add gameplay-feedback effects
+* [ ] Final visual polish
+
+### 11. Build / Export / Submission
+
+* [ ] Configure export presets early
+* [ ] Test initial standalone build
+* [ ] Re-test throughout development
+* [ ] Prepare final package/submission
+* [ ] Final clean-build test and submit
