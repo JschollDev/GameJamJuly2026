@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bechywf882bye"]
 
-[ext_resource type="Script" uid="uid://bryghxenfhlpx" path="res://claypot_area.gd" id="1_xndjb"]
+[ext_resource type="Script" uid="uid://bryghxenfhlpx" path="res://Area collision scripts/claypot_area.gd" id="1_xndjb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3uc41"]
 

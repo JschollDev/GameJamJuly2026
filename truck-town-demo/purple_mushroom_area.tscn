@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bchgxyf5bg6kx"]
 
-[ext_resource type="Script" uid="uid://doxv6ru3pp4vw" path="res://purple_mushroom_area.gd" id="1_llgv7"]
+[ext_resource type="Script" uid="uid://doxv6ru3pp4vw" path="res://Area collision scripts/purple_mushroom_area.gd" id="1_llgv7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3uc41"]
 

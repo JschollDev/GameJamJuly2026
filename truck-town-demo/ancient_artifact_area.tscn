@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c4ddtueu2sq6g"]
 
-[ext_resource type="Script" uid="uid://cxa4utx3f7rd4" path="res://ancient_artifact_area.gd" id="1_kfhp5"]
+[ext_resource type="Script" uid="uid://cxa4utx3f7rd4" path="res://Area collision scripts/ancient_artifact_area.gd" id="1_kfhp5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3uc41"]
 
