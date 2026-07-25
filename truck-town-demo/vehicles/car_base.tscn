@@ -67,7 +67,7 @@ use_as_steering = true
 wheel_roll_influence = 0.4
 wheel_radius = 0.25
 wheel_friction_slip = 1.0
-suspension_travel = 2.0
+suspension_travel = 10.0
 suspension_stiffness = 40.0
 damping_compression = 0.88
 
@@ -82,7 +82,7 @@ use_as_traction = true
 wheel_roll_influence = 0.4
 wheel_radius = 0.25
 wheel_friction_slip = 1.0
-suspension_travel = 2.0
+suspension_travel = 10.0
 suspension_stiffness = 40.0
 damping_compression = 0.88
 
@@ -98,7 +98,7 @@ use_as_steering = true
 wheel_roll_influence = 0.4
 wheel_radius = 0.25
 wheel_friction_slip = 1.0
-suspension_travel = 2.0
+suspension_travel = 10.0
 suspension_stiffness = 40.0
 damping_compression = 0.88
 
@@ -113,7 +113,7 @@ use_as_traction = true
 wheel_roll_influence = 0.4
 wheel_radius = 0.25
 wheel_friction_slip = 1.0
-suspension_travel = 2.0
+suspension_travel = 10.0
 suspension_stiffness = 40.0
 damping_compression = 0.88
 
