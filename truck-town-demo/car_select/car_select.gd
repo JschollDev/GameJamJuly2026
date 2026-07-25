@@ -95,4 +95,4 @@ func _on_volume_value_changed(value: float) -> void:
 
 
 func _on_chariot_pressed() -> void:
-	_load_scene(preload("res://vehicles/chariot.tscn"))
+	_load_scene(preload("res://vehicles/Chariot2.tscn"))

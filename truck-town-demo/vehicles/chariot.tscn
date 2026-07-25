@@ -14,13 +14,12 @@
 [ext_resource type="AudioStream" uid="uid://2kuq7xwmeuhj" path="res://vehicles/honk_2.wav" id="10_2wfgv"]
 [ext_resource type="Texture2D" uid="uid://yexl3pkv5tea" path="res://vehicles/particle_smoke.png" id="11_c8nmw"]
 [ext_resource type="Texture2D" uid="uid://c6nommjyxiscs" path="res://vehicles/blob_shadow.png" id="12_bhgpu"]
-[ext_resource type="ArrayMesh" uid="uid://ds3s43x5adquq" path="res://blender_exported_meshes/chariot/chariot_body_neck.res" id="14_q8q0m"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_l7i2k"]
 friction = 0.5
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x74tc"]
-size = Vector3(0.954078, 1, 1.8898726)
+size = Vector3(0.954078, 1, 2.6643627)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_bpr2q"]
 random_pitch = 1.05
@@ -66,7 +65,6 @@ script = ExtResource("1_1jmt3")
 [node name="Wheel1" type="VehicleWheel3D" parent="Body" unique_id=966137444]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.5077743, 0.02533181, -0.018331163)
 use_as_traction = true
-use_as_steering = true
 wheel_roll_influence = 0.725
 wheel_radius = 0.515
 wheel_friction_slip = 1.0
@@ -84,7 +82,6 @@ surface_material_override/0 = ExtResource("3_qhn6n")
 [node name="Wheel2" type="VehicleWheel3D" parent="Body" unique_id=1898822315]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.5736781, 0.00679712, -0.048390828)
 use_as_traction = true
-use_as_steering = true
 wheel_roll_influence = 0.725
 wheel_radius = 0.515
 wheel_friction_slip = 1.0
@@ -99,15 +96,51 @@ gi_mode = 2
 mesh = ExtResource("4_347il")
 surface_material_override/0 = ExtResource("3_qhn6n")
 
+[node name="Wheel3" type="VehicleWheel3D" parent="Body" unique_id=1820471900]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087647, 0.09699364, 1.7398453)
+use_as_traction = true
+use_as_steering = true
+wheel_roll_influence = 0.725
+wheel_radius = 0.515
+wheel_friction_slip = 1.0
+suspension_travel = 0.27
+suspension_stiffness = 40.0
+damping_compression = 0.88
+
+[node name="Wheel3" type="MeshInstance3D" parent="Body/Wheel3" unique_id=1302753791]
+transform = Transform3D(0.59, 0, 0, 0, 0.59, 0, 0, 0, 0.59, 0, 0, 0)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("2_r86em")
+surface_material_override/0 = ExtResource("3_qhn6n")
+
+[node name="Wheel4" type="VehicleWheel3D" parent="Body" unique_id=1943731486]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.71946317, 0.07845892, 1.769905)
+use_as_traction = true
+use_as_steering = true
+wheel_roll_influence = 0.725
+wheel_radius = 0.515
+wheel_friction_slip = 1.0
+suspension_travel = 0.27
+suspension_stiffness = 40.0
+damping_compression = 0.88
+
+[node name="Wheel4" type="MeshInstance3D" parent="Body/Wheel4" unique_id=530825770]
+transform = Transform3D(0.59, 0, 0, 0, 0.59, 0, 0, 0, 0.59, 0, 0, 0)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("4_347il")
+surface_material_override/0 = ExtResource("3_qhn6n")
+
 [node name="Body" type="MeshInstance3D" parent="Body" unique_id=397755799]
-transform = Transform3D(-0.5902058, 0, 5.159743e-08, 0, 0.5902058, 0, -5.159743e-08, 0, -0.5902058, 0, 0, 0)
+transform = Transform3D(-0.5902058, 0, 5.159743e-08, 0, 0.5902058, 0, -5.159743e-08, 0, -0.5902058, 0, 0, 0.88357884)
 layers = 2
 gi_mode = 2
 mesh = ExtResource("3_38su2")
 surface_material_override/0 = ExtResource("3_qhn6n")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Body" unique_id=2103581638]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.588269, 0.29579997)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.588269, 0.7751421)
 shape = SubResource("BoxShape3D_x74tc")
 
 [node name="CameraBase" type="Node3D" parent="Body" unique_id=2004720402]
@@ -171,8 +204,3 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.9
 
 [node name="TopDownCameraPosition" type="Marker3D" parent="Body" unique_id=1640557964]
 transform = Transform3D(-1, 8.74228e-08, 0, 3.82137e-15, 4.37114e-08, 1, 8.74228e-08, 1, -4.37114e-08, 0.00169557, 15.7771, 0.0955178)
-
-[node name="ChariotBodyNeck" type="MeshInstance3D" parent="Body" unique_id=133308384]
-transform = Transform3D(-0.59, 0, -8.908752e-08, 0, 0.59, 0, 8.908752e-08, 0, -0.59, 0.009743329, 0.002411738, -0.17900878)
-mesh = ExtResource("14_q8q0m")
-surface_material_override/0 = ExtResource("3_qhn6n")
