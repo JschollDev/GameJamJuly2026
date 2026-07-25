@@ -1,4 +1,4 @@
-extends Area3D
+extends CollisionShape3D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -10,7 +10,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
-func _on_nerfs_area_entered(area: Area3D) -> void:
-	if area.is_in_group('nerfs'):
-		area.get_parent().player_finished(get_parent().name)
+func _on_finish_line_area_entered(area: Area3D) -> void:
+	pass 
+	# Make it go to then end scene. Display winner of the one who crossed the line

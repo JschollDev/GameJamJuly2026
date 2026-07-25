@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b3bvcy3fweaak"]
 
-[ext_resource type="Script" uid="uid://cdd2gmn50am3p" path="res://nerfs_area.gd" id="1_eivxf"]
+[ext_resource type="Script" uid="uid://cdd2gmn50am3p" path="res://Area collision scripts/nerfs_area.gd" id="1_eivxf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3uc41"]
 

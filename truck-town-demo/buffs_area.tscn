@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b62yd1cysw0vd"]
 
-[ext_resource type="Script" uid="uid://by1bhm3llwuxy" path="res://buffs_area.gd" id="1_jqgf5"]
+[ext_resource type="Script" uid="uid://by1bhm3llwuxy" path="res://Area collision scripts/buffs_area.gd" id="1_jqgf5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3uc41"]
 

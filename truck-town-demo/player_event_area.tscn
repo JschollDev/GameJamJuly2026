@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://hwvticv63jn3"]
 
-[ext_resource type="Script" uid="uid://cm0asm4fpfuri" path="res://vehicle_area_collision.gd" id="1_2ggo1"]
+[ext_resource type="Script" uid="uid://cm0asm4fpfuri" path="res://Area collision scripts/vehicle_area_collision.gd" id="1_2ggo1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5rp3e"]
 

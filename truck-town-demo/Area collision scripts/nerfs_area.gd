@@ -10,6 +10,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func _on_purple_mushroom_area_entered(area: Area3D) -> void:
-	if area.is_in_group('purple_mushroom'):
-		pass
+func _on_nerfs_area_entered(area: Area3D) -> void:
+	if area.is_in_group('nerfs'):
+		area.get_parent().player_finished(get_parent().name)
