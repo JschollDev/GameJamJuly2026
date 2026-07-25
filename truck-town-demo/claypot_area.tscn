@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bechywf882bye"]
+
+[ext_resource type="Script" uid="uid://bryghxenfhlpx" path="res://claypot_area.gd" id="1_xndjb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3uc41"]
+
+[node name="Node3D" type="Node3D" unique_id=1032537545]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=343669339]
+script = ExtResource("1_xndjb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=652313675]
+shape = SubResource("BoxShape3D_3uc41")
+
+[connection signal="area_entered" from="Area3D" to="Area3D" method="_on_claypot_area_entered"]
