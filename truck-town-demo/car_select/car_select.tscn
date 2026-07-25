@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cgq7v1pxgrqtq"]
 
 [ext_resource type="Texture2D" uid="uid://dq0xi7cao5pdj" path="res://Images/VehicleIcons/chariot_icon.png" id="4_8injy"]
+[ext_resource type="Script" uid="uid://xlo71cd8nyle" path="res://car_select/fast_fix_testing.gd" id="4_68v1x"]
 [ext_resource type="FontFile" uid="uid://bxcg0iewa4okw" path="res://Fonts/Germania_One/GermaniaOne-Regular.ttf" id="5_uu0k4"]
 [ext_resource type="Script" uid="uid://clngiqoln1huy" path="res://Control/vehicle_menu_control.gd" id="8_y5qrv"]
 
@@ -265,3 +266,16 @@ loading_screen = NodePath("../LoadingPanel")
 player_choice_outlines = [NodePath("../MainMenu/P1_label"), NodePath("../MainMenu/P2_label"), NodePath("../MainMenu/P3_label"), NodePath("../MainMenu/p4_label")]
 choice_locations = [NodePath("../MainMenu/CarContainer/Chariot/Label"), NodePath("../MainMenu/CarContainer/Chariot2/Label"), NodePath("../MainMenu/CarContainer/Chariot3/Label"), NodePath("../MainMenu/CarContainer/Chariot4/Label")]
 player_choice_labels = [NodePath("../MainMenu/P1_label"), NodePath("../MainMenu/P2_label"), NodePath("../MainMenu/P3_label"), NodePath("../MainMenu/p4_label")]
+
+[node name="Button" type="Button" parent="." unique_id=1190121825]
+layout_mode = 0
+offset_left = 698.0
+offset_top = 200.0
+offset_right = 1384.0
+offset_bottom = 305.0
+theme_override_fonts/font = ExtResource("5_uu0k4")
+theme_override_font_sizes/font_size = 83
+text = "TESTING SKIP TO MAP"
+script = ExtResource("4_68v1x")
+
+[connection signal="button_down" from="Button" to="Button" method="_on_button_down"]
