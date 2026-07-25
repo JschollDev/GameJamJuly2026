@@ -21,28 +21,28 @@ shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_y5qrv"]
 font = ExtResource("5_uu0k4")
-font_size = 40
+font_size = 33
 font_color = Color(0.16470589, 0.6156863, 0.56078434, 1)
 shadow_size = 21
 shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_2e7sn"]
 font = ExtResource("5_uu0k4")
-font_size = 40
+font_size = 33
 font_color = Color(0.9137255, 0.76862746, 0.41568628, 1)
 shadow_size = 21
 shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_j6tc7"]
 font = ExtResource("5_uu0k4")
-font_size = 40
+font_size = 33
 font_color = Color(0.95686275, 0.63529414, 0.38039216, 1)
 shadow_size = 21
 shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_13506"]
 font = ExtResource("5_uu0k4")
-font_size = 40
+font_size = 33
 font_color = Color(0.90588236, 0.43529412, 0.31764707, 1)
 shadow_size = 21
 shadow_color = Color(0, 0, 0, 1)
@@ -202,6 +202,7 @@ layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 47.0
 offset_transform_enabled = true
+offset_transform_position = Vector2(50, 10)
 text = "Player 1"
 label_settings = SubResource("LabelSettings_y5qrv")
 vertical_alignment = 1
@@ -211,7 +212,7 @@ layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 47.0
 offset_transform_enabled = true
-offset_transform_position = Vector2(0, 40)
+offset_transform_position = Vector2(50, 50)
 text = "Player 2"
 label_settings = SubResource("LabelSettings_2e7sn")
 vertical_alignment = 1
@@ -221,7 +222,7 @@ layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 47.0
 offset_transform_enabled = true
-offset_transform_position = Vector2(0, 80)
+offset_transform_position = Vector2(50, 90)
 text = "Player 3"
 label_settings = SubResource("LabelSettings_j6tc7")
 vertical_alignment = 1
@@ -231,7 +232,7 @@ layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 47.0
 offset_transform_enabled = true
-offset_transform_position = Vector2(0, 120)
+offset_transform_position = Vector2(50, 130)
 text = "Player 4"
 label_settings = SubResource("LabelSettings_13506")
 vertical_alignment = 1
