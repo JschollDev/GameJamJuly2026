@@ -22,10 +22,10 @@ func _ready() -> void:
 	focus_first_car()
 
 	# Initialize audio slider.
-	slider_volume.value = AudioServer.get_bus_volume_linear(audio_master)
+	#slider_volume.value = AudioServer.get_bus_volume_linear(audio_master)
 
 	# Hide SDFGI button if this is using a renderer that doesn't support it
-	button_sdfgi.visible = RenderingServer.get_current_rendering_method() == "forward_plus"
+	#button_sdfgi.visible = RenderingServer.get_current_rendering_method() == "forward_plus"
 
 
 func _process(_delta: float) -> void:

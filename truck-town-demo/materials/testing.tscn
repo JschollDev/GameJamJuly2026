@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://b287olj1qknxh"]
+
+[ext_resource type="Script" uid="uid://cgv1232w3g6bx" path="res://Control/mesh_script.gd" id="2_8jl7o"]
+[ext_resource type="Script" uid="uid://lo8ekayt0285" path="res://Control/testing_control_agent.gd" id="2_q4t8x"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8jl7o"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_vvia3"]
+sky_material = SubResource("ProceduralSkyMaterial_8jl7o")
+
+[sub_resource type="Environment" id="Environment_puspr"]
+background_mode = 2
+sky = SubResource("Sky_vvia3")
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_yh076"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i5qvr"]
+
+[node name="Testing" type="Node3D" unique_id=838494391]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=402040608]
+environment = SubResource("Environment_puspr")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1875010754]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="p1" type="MeshInstance3D" parent="." unique_id=1158385783]
+mesh = SubResource("BoxMesh_yh076")
+surface_material_override/0 = SubResource("StandardMaterial3D_i5qvr")
+script = ExtResource("2_8jl7o")
+
+[node name="p2" type="MeshInstance3D" parent="." unique_id=2108718656]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.3338127)
+mesh = SubResource("BoxMesh_yh076")
+surface_material_override/0 = SubResource("StandardMaterial3D_i5qvr")
+script = ExtResource("2_8jl7o")
+
+[node name="p3" type="MeshInstance3D" parent="." unique_id=1503558971]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.6418898)
+mesh = SubResource("BoxMesh_yh076")
+surface_material_override/0 = SubResource("StandardMaterial3D_i5qvr")
+script = ExtResource("2_8jl7o")
+
+[node name="p4" type="MeshInstance3D" parent="." unique_id=1799403814]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.9481485)
+mesh = SubResource("BoxMesh_yh076")
+surface_material_override/0 = SubResource("StandardMaterial3D_i5qvr")
+script = ExtResource("2_8jl7o")
+
+[node name="TestingControlAgent" type="Node3D" parent="." unique_id=1599621568 node_paths=PackedStringArray("p1_mesh", "p2_mesh", "p3_mesh", "p4_mesh")]
+script = ExtResource("2_q4t8x")
+p1_mesh = NodePath("../p1")
+p2_mesh = NodePath("../p2")
+p3_mesh = NodePath("../p3")
+p4_mesh = NodePath("../p4")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1968011334]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2199643, 0)
+billboard = 1
+text = "P1
+"
+font_size = 63
+
+[node name="Label3D2" type="Label3D" parent="." unique_id=836427231]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2199643, -1.3338127)
+billboard = 1
+text = "P2
+"
+font_size = 63
+
+[node name="Label3D3" type="Label3D" parent="." unique_id=1058899173]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2199643, -2.6418898)
+billboard = 1
+text = "P3"
+font_size = 63
+
+[node name="Label3D4" type="Label3D" parent="." unique_id=7387605]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2199643, -3.9481485)
+billboard = 1
+text = "P4
+"
+font_size = 63
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=721599119]
+transform = Transform3D(-4.259982e-08, -0.22408226, 0.9745702, -9.794947e-09, 0.9745702, 0.22408226, -1, 0, -4.371139e-08, 3.1363091, 1.5146203, -1.7293782)
+fov = 91.70228
