@@ -4,7 +4,7 @@
 [ext_resource type="ArrayMesh" uid="uid://bbyol3vxnxl5e" path="res://blender_exported_meshes/chariot/chariot_wheel_left.res" id="2_ye7l4"]
 [ext_resource type="ArrayMesh" uid="uid://b1ar6ip7p2ptj" path="res://blender_exported_meshes/chariot/chariot_wheel_right.res" id="3_118sd"]
 [ext_resource type="Script" uid="uid://bpgd2w0obg3tl" path="res://vehicles/follow_camera.gd" id="4_118sd"]
-[ext_resource type="ArrayMesh" uid="uid://ch7hpxnr4lc56" path="res://blender_exported_meshes/chariot/chariot_body.res" id="4_ye7l4"]
+[ext_resource type="ArrayMesh" uid="uid://belak24qcbn58" path="res://blender_exported_meshes/chariot/chariot_body.res" id="4_ye7l4"]
 [ext_resource type="AudioStream" uid="uid://2ukhlukq60ge" path="res://vehicles/engine.wav" id="5_t0j44"]
 [ext_resource type="AudioStream" uid="uid://bwmbj0hptxpp2" path="res://vehicles/impact_1.wav" id="6_q8rog"]
 [ext_resource type="AudioStream" uid="uid://g504na8iwq65" path="res://vehicles/impact_2.wav" id="7_mxwlm"]
@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://2kuq7xwmeuhj" path="res://vehicles/honk_2.wav" id="10_fuhxi"]
 [ext_resource type="Texture2D" uid="uid://yexl3pkv5tea" path="res://vehicles/particle_smoke.png" id="11_4vbav"]
 [ext_resource type="Texture2D" uid="uid://c6nommjyxiscs" path="res://vehicles/blob_shadow.png" id="12_u56fx"]
+[ext_resource type="ArrayMesh" uid="uid://ds3s43x5adquq" path="res://blender_exported_meshes/chariot/chariot_body_neck.res" id="14_yd2ny"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_l7i2k"]
 friction = 0.5
@@ -63,7 +64,7 @@ center_of_mass = Vector3(0, -0.25, 0)
 script = ExtResource("1_m67tk")
 
 [node name="Wheel1" type="VehicleWheel3D" parent="Body" unique_id=966137444]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8921578, 0.115169, 1.10416)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3122362, 0.34430188, 3.2326148)
 use_as_traction = true
 use_as_steering = true
 wheel_roll_influence = 0.4
@@ -94,7 +95,7 @@ gi_mode = 2
 mesh = ExtResource("2_ye7l4")
 
 [node name="Wheel3" type="VehicleWheel3D" parent="Body" unique_id=1269318468]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.88814056, 0.115169, 1.10416)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1133536, 0.34430188, 3.2326148)
 use_as_traction = true
 use_as_steering = true
 wheel_roll_influence = 0.4
@@ -213,3 +214,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.9
 
 [node name="TopDownCameraPosition" type="Marker3D" parent="Body" unique_id=1640557964]
 transform = Transform3D(-1, 8.74228e-08, 0, 3.82137e-15, 4.37114e-08, 1, 8.74228e-08, 1, -4.37114e-08, 0.00169557, 15.7771, 0.0955178)
+
+[node name="ChariotBodyNeck" type="MeshInstance3D" parent="Body" unique_id=1474903337]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.0677523, -0.222867, -0.044971414)
+mesh = ExtResource("14_yd2ny")
