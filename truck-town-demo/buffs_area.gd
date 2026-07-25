@@ -11,6 +11,6 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_nerfs_area_entered(area: Area3D) -> void:
-	if area.is_in_group('nerfs'):
+func _on_buffs_area_entered(area: Area3D) -> void:
+	if area.is_in_group('buffs'):
 		area.get_parent().player_finished(get_parent().name)
