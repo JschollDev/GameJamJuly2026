@@ -69,7 +69,7 @@ script = ExtResource("1_m67tk")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3122362, 0.34430188, 3.2326148)
 use_as_traction = true
 use_as_steering = true
-wheel_roll_influence = 0.4
+wheel_roll_influence = 1.0
 wheel_radius = 0.8
 wheel_friction_slip = 10.0
 suspension_travel = 5.0
@@ -77,15 +77,16 @@ suspension_stiffness = 60.0
 damping_compression = 0.88
 
 [node name="Wheel1" type="MeshInstance3D" parent="Body/Wheel1" unique_id=1257104377]
+visible = false
 layers = 2
 material_override = ExtResource("2_118sd")
 gi_mode = 2
 mesh = ExtResource("2_ye7l4")
 
 [node name="Wheel2" type="VehicleWheel3D" parent="Body" unique_id=1898822315]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8921578, 0.115169, -0.783403)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3921577, 0.115169, -0.783403)
 use_as_traction = true
-wheel_roll_influence = 0.4
+wheel_roll_influence = 1.0
 wheel_radius = 0.8
 wheel_friction_slip = 10.0
 suspension_travel = 5.0
@@ -93,6 +94,7 @@ suspension_stiffness = 60.0
 damping_compression = 0.88
 
 [node name="Wheel2" type="MeshInstance3D" parent="Body/Wheel2" unique_id=1248127195]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
 layers = 2
 material_override = ExtResource("2_118sd")
 gi_mode = 2
@@ -102,7 +104,7 @@ mesh = ExtResource("2_ye7l4")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1133536, 0.34430188, 3.2326148)
 use_as_traction = true
 use_as_steering = true
-wheel_roll_influence = 0.4
+wheel_roll_influence = 1.0
 wheel_radius = 0.8
 wheel_friction_slip = 10.0
 suspension_travel = 5.0
@@ -110,15 +112,16 @@ suspension_stiffness = 60.0
 damping_compression = 0.88
 
 [node name="Wheel3" type="MeshInstance3D" parent="Body/Wheel3" unique_id=829204557]
+visible = false
 layers = 2
 material_override = ExtResource("2_118sd")
 gi_mode = 2
 mesh = ExtResource("3_118sd")
 
 [node name="Wheel4" type="VehicleWheel3D" parent="Body" unique_id=285153046]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.88814056, 0.115169, -0.783403)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3881406, 0.115169, -0.783403)
 use_as_traction = true
-wheel_roll_influence = 0.4
+wheel_roll_influence = 1.0
 wheel_radius = 0.8
 wheel_friction_slip = 10.0
 suspension_travel = 5.0
@@ -126,6 +129,7 @@ suspension_stiffness = 60.0
 damping_compression = 0.88
 
 [node name="Wheel4" type="MeshInstance3D" parent="Body/Wheel4" unique_id=993561784]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
 layers = 2
 material_override = ExtResource("2_118sd")
 gi_mode = 2
