@@ -4,6 +4,7 @@ const STEER_LIMIT = 0.4
 const BRAKE_STRENGTH = 2.0
 
 @export var controller_id: int = 0
+@export var viewportcover: SubViewportContainer
 @export var engine_force_value := 40.0
 
 #var turbometer: Range
@@ -114,6 +115,11 @@ func _input(p_input_event: InputEvent) -> void:
 
 	if p_input_event.is_action_pressed(&"toggle_headlights"):
 		toggle_headlights()
+		
+	if p_input_event.is_action_pressed(&"ui_controller_id"):
+		Input.start_joy_vibration(controller_id, 1.0, 1.0, 0.1)
+		viewportcover.flash()
+		
 
 	if p_input_event.is_action_pressed(&"honk"):
 		$HonkSound.play()

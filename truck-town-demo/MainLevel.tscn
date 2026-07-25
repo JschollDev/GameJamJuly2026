@@ -2,8 +2,12 @@
 
 [ext_resource type="Script" uid="uid://cyyle6l5n4oim" path="res://Control/MainLevelController.gd" id="1_fi62q"]
 [ext_resource type="Texture2D" uid="uid://cgh6h301kdmg0" path="res://Images/texture_04.png" id="1_jq6gy"]
+[ext_resource type="Shader" uid="uid://wrdevexoyuy5" path="res://whoami.gdshader" id="2_cb5hs"]
 [ext_resource type="PackedScene" uid="uid://cc6x4eua15r43" path="res://vehicles/Chariot2.tscn" id="2_o3cl4"]
 [ext_resource type="Script" uid="uid://bebqhip6e8ocm" path="res://ProfessionalCamera.gd" id="2_rlx2o"]
+[ext_resource type="Script" uid="uid://c8bacvt7ynq6e" path="res://whoami.gd" id="2_taiwb"]
+[ext_resource type="FontFile" uid="uid://bxcg0iewa4okw" path="res://Fonts/Germania_One/GermaniaOne-Regular.ttf" id="3_ri6rb"]
+[ext_resource type="Script" uid="uid://8m1gckfogs7n" path="res://fade_away.gd" id="6_m50br"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rj4so"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -16,6 +20,65 @@ sky_material = SubResource("ProceduralSkyMaterial_rj4so")
 background_mode = 2
 sky = SubResource("Sky_jq6gy")
 glow_enabled = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m50br"]
+shader = ExtResource("2_cb5hs")
+shader_parameter/flash_color = Color(1, 0, 0, 1)
+shader_parameter/flash_strength = 0.0
+shader_parameter/border_size = 0.08
+
+[sub_resource type="LabelSettings" id="LabelSettings_taiwb"]
+font = ExtResource("3_ri6rb")
+font_size = 33
+font_color = Color(0.16470589, 0.6156863, 0.56078434, 1)
+shadow_size = 21
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p40m6"]
+shader = ExtResource("2_cb5hs")
+shader_parameter/flash_color = Color(1, 0, 0, 1)
+shader_parameter/flash_strength = 0.0
+shader_parameter/border_size = 0.08
+
+[sub_resource type="LabelSettings" id="LabelSettings_cb5hs"]
+font = ExtResource("3_ri6rb")
+font_size = 33
+font_color = Color(0.9137255, 0.76862746, 0.41568628, 1)
+shadow_size = 21
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0rh38"]
+shader = ExtResource("2_cb5hs")
+shader_parameter/flash_color = Color(1, 0, 0, 1)
+shader_parameter/flash_strength = 0.0
+shader_parameter/border_size = 0.08
+
+[sub_resource type="LabelSettings" id="LabelSettings_m50br"]
+font = ExtResource("3_ri6rb")
+font_size = 33
+font_color = Color(0.95686275, 0.63529414, 0.38039216, 1)
+shadow_size = 21
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_78kfj"]
+shader = ExtResource("2_cb5hs")
+shader_parameter/flash_color = Color(1, 0, 0, 1)
+shader_parameter/flash_strength = 0.0
+shader_parameter/border_size = 0.08
+
+[sub_resource type="LabelSettings" id="LabelSettings_p40m6"]
+font = ExtResource("3_ri6rb")
+font_size = 33
+font_color = Color(0.90588236, 0.43529412, 0.31764707, 1)
+shadow_size = 21
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0rh38"]
+font = ExtResource("3_ri6rb")
+font_size = 100
+font_color = Color(0.16470589, 0.6156863, 0.56078434, 1)
+shadow_size = 31
+shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_rj4so"]
 data = PackedVector3Array(-100, 0.5, 100, 100, 0.5, 100, -100, -0.5, 100, 100, 0.5, 100, 100, -0.5, 100, -100, -0.5, 100, 100, 0.5, -100, -100, 0.5, -100, 100, -0.5, -100, -100, 0.5, -100, -100, -0.5, -100, 100, -0.5, -100, 100, 0.5, 100, 100, 0.5, -100, 100, -0.5, 100, 100, 0.5, -100, 100, -0.5, -100, 100, -0.5, 100, -100, 0.5, -100, -100, 0.5, 100, -100, -0.5, -100, -100, 0.5, 100, -100, -0.5, 100, -100, -0.5, -100, 100, 0.5, 100, -100, 0.5, 100, 100, 0.5, -100, -100, 0.5, 100, -100, 0.5, -100, 100, 0.5, -100, -100, -0.5, 100, 100, -0.5, 100, -100, -0.5, -100, 100, -0.5, 100, 100, -0.5, -100, -100, -0.5, -100)
@@ -30,10 +93,11 @@ size = Vector3(200, 1, 200)
 albedo_texture = ExtResource("1_jq6gy")
 uv1_scale = Vector3(200, 200, 200)
 
-[node name="MainLevel" type="Node3D" unique_id=15499575 node_paths=PackedStringArray("vehicles", "cameras")]
+[node name="MainLevel" type="Node3D" unique_id=15499575 node_paths=PackedStringArray("vehicles", "cameras", "SubViews")]
 script = ExtResource("1_fi62q")
 vehicles = [NodePath("Player1"), NodePath("Player2"), NodePath("Player3"), NodePath("Player4")]
 cameras = [NodePath("SplitScreen/GridContainer/SubViewPortPlayerContainer1/ViewPortPlayer1/PlayerCamera1"), NodePath("SplitScreen/GridContainer/SubViewPortPlayerContainer2/ViewPortPlayer2/PlayerCamera2"), NodePath("SplitScreen/GridContainer/SubViewPortPlayerContainer3/ViewPortPlayer3/PlayerCamera2"), NodePath("SplitScreen/GridContainer/SubViewPortPlayerContainer4/ViewPortPlayer4/PlayerCamera4")]
+SubViews = [NodePath("SplitScreen/GridContainer/SubViewPortPlayerContainer1"), NodePath("SplitScreen/GridContainer/SubViewPortPlayerContainer2"), NodePath("SplitScreen/GridContainer/SubViewPortPlayerContainer3"), NodePath("SplitScreen/GridContainer/SubViewPortPlayerContainer4")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=322062041]
 environment = SubResource("Environment_o3cl4")
@@ -60,7 +124,10 @@ grow_vertical = 2
 columns = 2
 
 [node name="SubViewPortPlayerContainer1" type="SubViewportContainer" parent="SplitScreen/GridContainer" unique_id=492018024]
+material = SubResource("ShaderMaterial_m50br")
 layout_mode = 2
+script = ExtResource("2_taiwb")
+flash_color = Color(0.16470589, 0.6156863, 0.56078434, 1)
 
 [node name="ViewPortPlayer1" type="SubViewport" parent="SplitScreen/GridContainer/SubViewPortPlayerContainer1" unique_id=1565898411]
 handle_input_locally = false
@@ -73,15 +140,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0783978, 14.314348, 0)
 script = ExtResource("2_rlx2o")
 target = NodePath("../../../../../Player1")
 
-[node name="Label3D" type="Label3D" parent="SplitScreen/GridContainer/SubViewPortPlayerContainer1/ViewPortPlayer1/PlayerCamera1" unique_id=1036588776]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.6658729)
-billboard = 1
-text = "Camera 1"
-
 [node name="RayCast3D" type="RayCast3D" parent="SplitScreen/GridContainer/SubViewPortPlayerContainer1/ViewPortPlayer1/PlayerCamera1" unique_id=142730067]
 
-[node name="SubViewPortPlayerContainer2" type="SubViewportContainer" parent="SplitScreen/GridContainer" unique_id=1073447066]
+[node name="P1_label" type="Label" parent="SplitScreen/GridContainer/SubViewPortPlayerContainer1" unique_id=1135471103]
 layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(32, 0)
+text = "Player 1"
+label_settings = SubResource("LabelSettings_taiwb")
+vertical_alignment = 1
+
+[node name="SubViewPortPlayerContainer2" type="SubViewportContainer" parent="SplitScreen/GridContainer" unique_id=1073447066]
+material = SubResource("ShaderMaterial_p40m6")
+layout_mode = 2
+script = ExtResource("2_taiwb")
+flash_color = Color(0.9137255, 0.76862746, 0.41568628, 1)
 
 [node name="ViewPortPlayer2" type="SubViewport" parent="SplitScreen/GridContainer/SubViewPortPlayerContainer2" unique_id=500595772]
 handle_input_locally = false
@@ -93,15 +166,21 @@ render_target_update_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.213407, 14.314348, 0)
 script = ExtResource("2_rlx2o")
 
-[node name="Label3D" type="Label3D" parent="SplitScreen/GridContainer/SubViewPortPlayerContainer2/ViewPortPlayer2/PlayerCamera2" unique_id=171004441]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.6658729)
-billboard = 1
-text = "Camera 2"
-
 [node name="RayCast3D" type="RayCast3D" parent="SplitScreen/GridContainer/SubViewPortPlayerContainer2/ViewPortPlayer2/PlayerCamera2" unique_id=1750304163]
 
-[node name="SubViewPortPlayerContainer3" type="SubViewportContainer" parent="SplitScreen/GridContainer" unique_id=121499882]
+[node name="P2_label" type="Label" parent="SplitScreen/GridContainer/SubViewPortPlayerContainer2" unique_id=736401084]
 layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(32, 0)
+text = "Player 2"
+label_settings = SubResource("LabelSettings_cb5hs")
+vertical_alignment = 1
+
+[node name="SubViewPortPlayerContainer3" type="SubViewportContainer" parent="SplitScreen/GridContainer" unique_id=121499882]
+material = SubResource("ShaderMaterial_0rh38")
+layout_mode = 2
+script = ExtResource("2_taiwb")
+flash_color = Color(0.95686275, 0.63529414, 0.38039216, 1)
 
 [node name="ViewPortPlayer3" type="SubViewport" parent="SplitScreen/GridContainer/SubViewPortPlayerContainer3" unique_id=519476150]
 handle_input_locally = false
@@ -113,15 +192,21 @@ render_target_update_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9931583, 14.314348, 0)
 script = ExtResource("2_rlx2o")
 
-[node name="Label3D" type="Label3D" parent="SplitScreen/GridContainer/SubViewPortPlayerContainer3/ViewPortPlayer3/PlayerCamera2" unique_id=546313346]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.6658729)
-billboard = 1
-text = "Camera 3"
-
 [node name="RayCast3D" type="RayCast3D" parent="SplitScreen/GridContainer/SubViewPortPlayerContainer3/ViewPortPlayer3/PlayerCamera2" unique_id=894406034]
 
-[node name="SubViewPortPlayerContainer4" type="SubViewportContainer" parent="SplitScreen/GridContainer" unique_id=1088132896]
+[node name="P3_label" type="Label" parent="SplitScreen/GridContainer/SubViewPortPlayerContainer3" unique_id=2098784563]
 layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(32, 0)
+text = "Player 3"
+label_settings = SubResource("LabelSettings_m50br")
+vertical_alignment = 1
+
+[node name="SubViewPortPlayerContainer4" type="SubViewportContainer" parent="SplitScreen/GridContainer" unique_id=1088132896]
+material = SubResource("ShaderMaterial_78kfj")
+layout_mode = 2
+script = ExtResource("2_taiwb")
+flash_color = Color(0.90588236, 0.43529412, 0.31764707, 1)
 
 [node name="ViewPortPlayer4" type="SubViewport" parent="SplitScreen/GridContainer/SubViewPortPlayerContainer4" unique_id=688429579]
 handle_input_locally = false
@@ -133,12 +218,44 @@ render_target_update_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0497227, 14.314348, 0)
 script = ExtResource("2_rlx2o")
 
-[node name="Label3D" type="Label3D" parent="SplitScreen/GridContainer/SubViewPortPlayerContainer4/ViewPortPlayer4/PlayerCamera4" unique_id=2121937944]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.6658729)
-billboard = 1
-text = "Camera 4"
-
 [node name="RayCast3D" type="RayCast3D" parent="SplitScreen/GridContainer/SubViewPortPlayerContainer4/ViewPortPlayer4/PlayerCamera4" unique_id=516381619]
+
+[node name="p4_label" type="Label" parent="SplitScreen/GridContainer/SubViewPortPlayerContainer4" unique_id=1716922490]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(32, 0)
+text = "Player 4"
+label_settings = SubResource("LabelSettings_p40m6")
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="SplitScreen" unique_id=1679629665]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_m50br")
+
+[node name="Tip" type="Label" parent="SplitScreen/Panel" unique_id=826526798]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = -413.5
+offset_right = 0.5
+offset_bottom = 413.5
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_position = Vector2(32, 0)
+text = "PRESS Y TO VIBRATE YOUR CONTROLLER
+AND FLASH YOUR VIEWPORT"
+label_settings = SubResource("LabelSettings_0rh38")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=58396827]
 

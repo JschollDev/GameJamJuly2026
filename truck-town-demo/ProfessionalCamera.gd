@@ -2,8 +2,8 @@ extends Camera3D
 
 @export var target: Node3D
 @export var follow_speed: float = 5.0
-@export var look_ahead_time: float = 0.5
-@export var follow_height: float = 3.0
+@export var look_ahead_time: float = 0.2
+@export var follow_height: float = 3.5
 @export var follow_distance: float = 5.0
 @export var ground_clearance: float = 1.0
 

@@ -80,7 +80,7 @@ func move_player_outline(player_index: int) -> void:
 		return
 
 	player_choice_outlines[player_index].global_position = \
-		choice_locations[choice_index].global_position
+		choice_locations[choice_index].global_position + Vector2(75.0,350.0)
 
 
 func lock_player_choice(player_index: int) -> void:
