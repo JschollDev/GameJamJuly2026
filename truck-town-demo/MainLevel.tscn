@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://c8bacvt7ynq6e" path="res://whoami.gd" id="2_taiwb"]
 [ext_resource type="FontFile" uid="uid://bxcg0iewa4okw" path="res://Fonts/Germania_One/GermaniaOne-Regular.ttf" id="3_ri6rb"]
 [ext_resource type="Script" uid="uid://8m1gckfogs7n" path="res://fade_away.gd" id="6_m50br"]
+[ext_resource type="Texture2D" uid="uid://de6807jhd42i5" path="res://Images/KennyControlsIcons/Steam Controller/Vector/steam_button_y.svg" id="7_p40m6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rj4so"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -75,10 +76,16 @@ shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_0rh38"]
 font = ExtResource("3_ri6rb")
-font_size = 100
-font_color = Color(0.16470589, 0.6156863, 0.56078434, 1)
-shadow_size = 31
+font_size = 52
+font_color = Color(0.23158556, 0.8226739, 0.7507856, 1)
+shadow_size = 19
 shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p40m6"]
+load_path = "res://.godot/imported/steam_rt.svg-a55db72e7b16a806f4e5fd95722616ad.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0rh38"]
+load_path = "res://.godot/imported/steam_stick_side_l.svg-6b40770e5c0aaa3f36cc340c92f4f2c3.ctex"
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_rj4so"]
 data = PackedVector3Array(-100, 0.5, 100, 100, 0.5, 100, -100, -0.5, 100, 100, 0.5, 100, 100, -0.5, 100, -100, -0.5, 100, 100, 0.5, -100, -100, 0.5, -100, 100, -0.5, -100, -100, 0.5, -100, -100, -0.5, -100, 100, -0.5, -100, 100, 0.5, 100, 100, 0.5, -100, 100, -0.5, 100, 100, 0.5, -100, 100, -0.5, -100, 100, -0.5, 100, -100, 0.5, -100, -100, 0.5, 100, -100, -0.5, -100, -100, 0.5, 100, -100, -0.5, 100, -100, -0.5, -100, 100, 0.5, 100, -100, 0.5, 100, 100, 0.5, -100, -100, 0.5, 100, -100, 0.5, -100, 100, 0.5, -100, -100, -0.5, 100, 100, -0.5, 100, -100, -0.5, -100, 100, -0.5, 100, 100, -0.5, -100, -100, -0.5, -100)
@@ -237,22 +244,73 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("6_m50br")
 
-[node name="Tip" type="Label" parent="SplitScreen/Panel" unique_id=826526798]
+[node name="VBoxContainer" type="VBoxContainer" parent="SplitScreen/Panel" unique_id=101439972]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -0.5
-offset_top = -413.5
-offset_right = 0.5
-offset_bottom = 413.5
+offset_left = -725.5
+offset_top = -39.5
+offset_right = 725.5
+offset_bottom = 39.5
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SplitScreen/Panel/VBoxContainer" unique_id=2013766789]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="SplitScreen/Panel/VBoxContainer/HBoxContainer" unique_id=710505764]
+custom_maximum_size = Vector2(99, 99)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("7_p40m6")
+expand_mode = 4
+
+[node name="Tip" type="Label" parent="SplitScreen/Panel/VBoxContainer/HBoxContainer" unique_id=826526798]
+layout_mode = 2
 offset_transform_position = Vector2(32, 0)
-text = "PRESS Y TO VIBRATE YOUR CONTROLLER
-AND FLASH YOUR VIEWPORT"
+text = "Flash your Viewport"
+label_settings = SubResource("LabelSettings_0rh38")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="SplitScreen/Panel/VBoxContainer" unique_id=121377194]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="SplitScreen/Panel/VBoxContainer/HBoxContainer2" unique_id=507993101]
+custom_maximum_size = Vector2(99, 99)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("CompressedTexture2D_p40m6")
+expand_mode = 4
+
+[node name="Tip" type="Label" parent="SplitScreen/Panel/VBoxContainer/HBoxContainer2" unique_id=1534577468]
+layout_mode = 2
+offset_transform_position = Vector2(32, 0)
+text = "Drive FASTER! 😃"
+label_settings = SubResource("LabelSettings_0rh38")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="SplitScreen/Panel/VBoxContainer" unique_id=1065941874]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="SplitScreen/Panel/VBoxContainer/HBoxContainer3" unique_id=400222321]
+custom_maximum_size = Vector2(99, 99)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("CompressedTexture2D_0rh38")
+expand_mode = 4
+
+[node name="Tip" type="Label" parent="SplitScreen/Panel/VBoxContainer/HBoxContainer3" unique_id=1469470044]
+layout_mode = 2
+offset_transform_position = Vector2(32, 0)
+text = "Left Control Stick to Steer"
 label_settings = SubResource("LabelSettings_0rh38")
 horizontal_alignment = 1
 vertical_alignment = 1
