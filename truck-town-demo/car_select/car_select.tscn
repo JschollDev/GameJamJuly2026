@@ -1,31 +1,51 @@
 [gd_scene format=3 uid="uid://cgq7v1pxgrqtq"]
 
-[ext_resource type="Script" uid="uid://b6oqxg642iyvi" path="res://car_select/car_select.gd" id="1_jrgrs"]
-[ext_resource type="Texture2D" uid="uid://ppxannqo6rtg" path="res://car_select/choose_van.png" id="2_8injy"]
-[ext_resource type="Texture2D" uid="uid://ieqt5ql863tb" path="res://car_select/choose_trailer.png" id="3_uu0k4"]
-[ext_resource type="Texture2D" uid="uid://ci5uqy6ljstal" path="res://car_select/choose_tow.png" id="4_y5qrv"]
-[ext_resource type="Texture2D" uid="uid://cjmg136aa35d7" path="res://car_select/audio_on.png" id="5_8injy"]
-[ext_resource type="Texture2D" uid="uid://eu0i3m0c3kki" path="res://car_select/audio_off.png" id="6_uu0k4"]
-[ext_resource type="Texture2D" uid="uid://7imikkhjt0t" path="res://trucktown.png" id="7_uu0k4"]
+[ext_resource type="Texture2D" uid="uid://dq0xi7cao5pdj" path="res://Images/VehicleIcons/chariot_icon.png" id="4_8injy"]
+[ext_resource type="FontFile" uid="uid://bxcg0iewa4okw" path="res://Fonts/Germania_One/GermaniaOne-Regular.ttf" id="5_uu0k4"]
+[ext_resource type="Script" uid="uid://clngiqoln1huy" path="res://Control/vehicle_menu_control.gd" id="8_y5qrv"]
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_r86em"]
-width = 256
-height = 256
-generate_mipmaps = false
+[sub_resource type="LabelSettings" id="LabelSettings_ipfyv"]
+font = ExtResource("5_uu0k4")
+font_size = 76
+font_color = Color(0.16470589, 0.6156863, 0.56078434, 1)
+shadow_size = 21
+shadow_color = Color(0, 0, 0, 1)
 
-[sub_resource type="ButtonGroup" id="ButtonGroup_lcrm3"]
+[sub_resource type="LabelSettings" id="LabelSettings_yh076"]
+font = ExtResource("5_uu0k4")
+font_size = 49
+font_color = Color(0.9137255, 0.76862746, 0.41568628, 1)
+outline_color = Color(0.90588236, 0.43529412, 0.31764707, 1)
+shadow_size = 21
+shadow_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5qrv"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.427493, 0.42749307, 0.42749307, 0.6)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-corner_detail = 6
+[sub_resource type="LabelSettings" id="LabelSettings_y5qrv"]
+font = ExtResource("5_uu0k4")
+font_size = 33
+font_color = Color(0.16470589, 0.6156863, 0.56078434, 1)
+shadow_size = 21
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2e7sn"]
+font = ExtResource("5_uu0k4")
+font_size = 33
+font_color = Color(0.9137255, 0.76862746, 0.41568628, 1)
+shadow_size = 21
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_j6tc7"]
+font = ExtResource("5_uu0k4")
+font_size = 33
+font_color = Color(0.95686275, 0.63529414, 0.38039216, 1)
+shadow_size = 21
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_13506"]
+font = ExtResource("5_uu0k4")
+font_size = 33
+font_color = Color(0.90588236, 0.43529412, 0.31764707, 1)
+shadow_size = 21
+shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8injy"]
 content_margin_left = 0.0
@@ -40,181 +60,183 @@ corner_radius_bottom_left = 3
 corner_detail = 5
 
 [sub_resource type="LabelSettings" id="LabelSettings_8injy"]
-font_size = 22
+font = ExtResource("5_uu0k4")
+font_size = 60
+font_color = Color(0.853878, 0.41061974, 0.3153471, 1)
 
 [node name="CarSelect" type="Control" unique_id=278128104]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -512.0
-offset_top = -300.0
-offset_right = 512.0
-offset_bottom = 300.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 2
 size_flags_vertical = 2
-script = ExtResource("1_jrgrs")
 
-[node name="CarContainer" type="HBoxContainer" parent="." unique_id=741482576]
-unique_name_in_owner = true
-layout_mode = 0
-anchor_top = 0.5
+[node name="ColorRect" type="ColorRect" parent="." unique_id=85206373]
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.5
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.09995874, 0.3311249, 0.45107788, 1)
+
+[node name="MainMenu" type="Panel" parent="." unique_id=58327277]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="MainMenu" unique_id=1675294069]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -576.0
+offset_right = 576.0
+offset_bottom = 23.0
+grow_horizontal = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 32)
+text = "Wheel Name Game Later"
+label_settings = SubResource("LabelSettings_ipfyv")
+horizontal_alignment = 1
+
+[node name="CarContainer" type="HBoxContainer" parent="MainMenu" unique_id=1664680886]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
 alignment = 1
 
-[node name="MiniVan" type="Button" parent="CarContainer" unique_id=1052280894]
+[node name="Chariot" type="TextureRect" parent="MainMenu/CarContainer" unique_id=466821005]
+custom_minimum_size = Vector2(300, 300)
 layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-icon = ExtResource("2_8injy")
+size_flags_vertical = 6
+texture = ExtResource("4_8injy")
+expand_mode = 3
 
-[node name="TrailerTruck" type="Button" parent="CarContainer" unique_id=1750997618]
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-icon = ExtResource("3_uu0k4")
-
-[node name="TowTruck" type="Button" parent="CarContainer" unique_id=1979324274]
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-icon = ExtResource("4_y5qrv")
-
-[node name="Chariot" type="Button" parent="CarContainer" unique_id=2137242952]
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-icon = SubResource("NoiseTexture2D_r86em")
-
-[node name="MoodPanel" type="PanelContainer" parent="." unique_id=987428814]
+[node name="Label" type="Label" parent="MainMenu/CarContainer/Chariot" unique_id=409258310]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -325.0
-offset_top = 164.0
-offset_right = 325.0
-offset_bottom = 205.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+text = "Chariot"
+label_settings = SubResource("LabelSettings_yh076")
+horizontal_alignment = 1
+vertical_alignment = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="MoodPanel" unique_id=647794826]
+[node name="Chariot2" type="TextureRect" parent="MainMenu/CarContainer" unique_id=724027013]
+custom_minimum_size = Vector2(300, 300)
 layout_mode = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 5
+size_flags_vertical = 6
+texture = ExtResource("4_8injy")
+expand_mode = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MoodPanel/MarginContainer" unique_id=1702282786]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MoodPanel/MarginContainer/HBoxContainer" unique_id=387498769]
-custom_minimum_size = Vector2(70, 0)
-layout_mode = 2
-text = "Mood"
-
-[node name="Sunrise" type="CheckBox" parent="MoodPanel/MarginContainer/HBoxContainer" unique_id=893251957]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-button_group = SubResource("ButtonGroup_lcrm3")
-text = "Sunrise"
-
-[node name="Day" type="CheckBox" parent="MoodPanel/MarginContainer/HBoxContainer" unique_id=1121484157]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-button_pressed = true
-button_group = SubResource("ButtonGroup_lcrm3")
-text = "Day"
-
-[node name="Sunset" type="CheckBox" parent="MoodPanel/MarginContainer/HBoxContainer" unique_id=1115499041]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-button_group = SubResource("ButtonGroup_lcrm3")
-text = "Sunset"
-
-[node name="Night" type="CheckBox" parent="MoodPanel/MarginContainer/HBoxContainer" unique_id=467681337]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-button_group = SubResource("ButtonGroup_lcrm3")
-text = "Night"
-
-[node name="OptionsPanel" type="PanelContainer" parent="." unique_id=1225626292]
+[node name="Label" type="Label" parent="MainMenu/CarContainer/Chariot2" unique_id=1077167624]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -325.0
-offset_top = 220.0
-offset_right = 325.0
-offset_bottom = 261.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+text = "Chariot"
+label_settings = SubResource("LabelSettings_yh076")
+horizontal_alignment = 1
+vertical_alignment = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="OptionsPanel" unique_id=1019820646]
+[node name="Chariot3" type="TextureRect" parent="MainMenu/CarContainer" unique_id=84375815]
+custom_minimum_size = Vector2(300, 300)
 layout_mode = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 5
+size_flags_vertical = 6
+texture = ExtResource("4_8injy")
+expand_mode = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="OptionsPanel/MarginContainer" unique_id=823199951]
-layout_mode = 2
-theme_override_constants/separation = 16
+[node name="Label" type="Label" parent="MainMenu/CarContainer/Chariot3" unique_id=981597792]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Chariot"
+label_settings = SubResource("LabelSettings_yh076")
+horizontal_alignment = 1
+vertical_alignment = 2
 
-[node name="Label" type="Label" parent="OptionsPanel/MarginContainer/HBoxContainer" unique_id=594642781]
-custom_minimum_size = Vector2(70, 0)
+[node name="Chariot4" type="TextureRect" parent="MainMenu/CarContainer" unique_id=1065401949]
+custom_minimum_size = Vector2(300, 300)
 layout_mode = 2
-text = "Options"
+size_flags_vertical = 6
+texture = ExtResource("4_8injy")
+expand_mode = 3
 
-[node name="SDFGI" type="CheckBox" parent="OptionsPanel/MarginContainer/HBoxContainer" unique_id=391285140]
-unique_name_in_owner = true
-layout_mode = 2
-text = "SDFGI"
+[node name="Label" type="Label" parent="MainMenu/CarContainer/Chariot4" unique_id=46567793]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Chariot"
+label_settings = SubResource("LabelSettings_yh076")
+horizontal_alignment = 1
+vertical_alignment = 2
 
-[node name="Audio" type="HBoxContainer" parent="OptionsPanel/MarginContainer/HBoxContainer" unique_id=1143737421]
-layout_mode = 2
-size_flags_horizontal = 3
+[node name="P1_label" type="Label" parent="MainMenu" unique_id=2065108398]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 47.0
+offset_transform_enabled = true
+offset_transform_position = Vector2(50, 10)
+text = "Player 1"
+label_settings = SubResource("LabelSettings_y5qrv")
+vertical_alignment = 1
 
-[node name="Mute" type="TextureButton" parent="OptionsPanel/MarginContainer/HBoxContainer/Audio" unique_id=1478725009]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(30, 30)
-layout_mode = 2
-toggle_mode = true
-texture_normal = ExtResource("5_8injy")
-texture_pressed = ExtResource("6_uu0k4")
-ignore_texture_size = true
-stretch_mode = 5
+[node name="P2_label" type="Label" parent="MainMenu" unique_id=1641262615]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 47.0
+offset_transform_enabled = true
+offset_transform_position = Vector2(50, 50)
+text = "Player 2"
+label_settings = SubResource("LabelSettings_2e7sn")
+vertical_alignment = 1
 
-[node name="Volume" type="HSlider" parent="OptionsPanel/MarginContainer/HBoxContainer/Audio" unique_id=732946787]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-theme_override_styles/slider = SubResource("StyleBoxFlat_y5qrv")
-max_value = 1.0
-step = 0.01
+[node name="P3_label" type="Label" parent="MainMenu" unique_id=1820466053]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 47.0
+offset_transform_enabled = true
+offset_transform_position = Vector2(50, 90)
+text = "Player 3"
+label_settings = SubResource("LabelSettings_j6tc7")
+vertical_alignment = 1
+
+[node name="p4_label" type="Label" parent="MainMenu" unique_id=1248071607]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 47.0
+offset_transform_enabled = true
+offset_transform_position = Vector2(50, 130)
+text = "Player 4"
+label_settings = SubResource("LabelSettings_13506")
+vertical_alignment = 1
 
 [node name="LoadingPanel" type="PanelContainer" parent="." unique_id=379577787]
 unique_name_in_owner = true
 visible = false
-layout_mode = 1
-anchors_preset = 15
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -231,19 +253,15 @@ text = "Loading...
 label_settings = SubResource("LabelSettings_8injy")
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1991765919]
-layout_mode = 0
-offset_left = 92.0
-offset_top = -156.0
-offset_right = 933.35535
-offset_bottom = 338.0
-mouse_filter = 2
-texture = ExtResource("7_uu0k4")
-expand_mode = 1
-
-[connection signal="pressed" from="CarContainer/MiniVan" to="." method="_on_mini_van_pressed"]
-[connection signal="pressed" from="CarContainer/TrailerTruck" to="." method="_on_trailer_truck_pressed"]
-[connection signal="pressed" from="CarContainer/TowTruck" to="." method="_on_tow_truck_pressed"]
-[connection signal="pressed" from="CarContainer/Chariot" to="." method="_on_chariot_pressed"]
-[connection signal="toggled" from="OptionsPanel/MarginContainer/HBoxContainer/Audio/Mute" to="." method="_on_mute_toggled"]
-[connection signal="value_changed" from="OptionsPanel/MarginContainer/HBoxContainer/Audio/Volume" to="." method="_on_volume_value_changed"]
+[node name="CarSelectBetter" type="Control" parent="." unique_id=1392715978 node_paths=PackedStringArray("loading_screen", "player_choice_outlines", "choice_locations", "player_choice_labels")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("8_y5qrv")
+loading_screen = NodePath("../LoadingPanel")
+player_choice_outlines = [NodePath("../MainMenu/P1_label"), NodePath("../MainMenu/P2_label"), NodePath("../MainMenu/P3_label"), NodePath("../MainMenu/p4_label")]
+choice_locations = [NodePath("../MainMenu/CarContainer/Chariot/Label"), NodePath("../MainMenu/CarContainer/Chariot2/Label"), NodePath("../MainMenu/CarContainer/Chariot3/Label"), NodePath("../MainMenu/CarContainer/Chariot4/Label")]
+player_choice_labels = [NodePath("../MainMenu/P1_label"), NodePath("../MainMenu/P2_label"), NodePath("../MainMenu/P3_label"), NodePath("../MainMenu/p4_label")]
