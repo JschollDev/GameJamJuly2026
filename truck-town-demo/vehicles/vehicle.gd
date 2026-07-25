@@ -7,8 +7,8 @@ const BRAKE_STRENGTH = 2.0
 @export var controller_id: int = 0
 @export var engine_force_value := 40.0
 
-var turbometer: Range
-var turbo_animator: AnimationPlayer
+#var turbometer: Range
+#var turbo_animator: AnimationPlayer
 
 var previous_speed := linear_velocity.length()
 var turbo_active := false
@@ -20,8 +20,9 @@ var is_compatibility := RenderingServer.get_current_rendering_method() == "gl_co
 
 
 func _ready() -> void:
-	assert(turbometer)
-	assert(turbo_animator)
+	#assert(turbometer)
+	#assert(turbo_animator)
+	pass
 
 
 func _physics_process(delta: float) -> void:
@@ -41,21 +42,21 @@ func _physics_process(delta: float) -> void:
 		for joypad in Input.get_connected_joypads():
 			Input.start_joy_vibration(joypad, 0.0, 0.5, 0.1)
 
-	var turbo_pressed := Input.is_action_pressed(&"boost")
-	var new_turbo_active := turbo_pressed and turbometer.value > 0
-	if new_turbo_active != turbo_active:
-		turbo_animator.play(&"TURBO" if new_turbo_active else &"Idle")
+	#var turbo_pressed := Input.is_action_pressed(&"boost")
+	#var new_turbo_active := turbo_pressed and turbometer.value > 0
+	#if new_turbo_active != turbo_active:
+	#	turbo_animator.play(&"TURBO" if new_turbo_active else &"Idle")
 
-	turbo_active = new_turbo_active
-	if turbo_active:
-		turbometer.value -= delta * 3.0
-	elif not turbo_pressed:
-		turbometer.value += delta
+	#turbo_active = new_turbo_active
+	#if turbo_active:
+	#	turbometer.value -= delta * 3.0
+	#elif not turbo_pressed:
+	#	turbometer.value += delta
 
-	if turbo_active:
-		constant_force = global_transform.basis.z * 400.0
-	else:
-		constant_force = Vector3()
+	#if turbo_active:
+	#	constant_force = global_transform.basis.z * 400.0
+	#else:
+	#	constant_force = Vector3()
 
 	# Automatically accelerate when using touch controls (reversing overrides acceleration).
 	if DisplayServer.is_touchscreen_available() or Input.is_action_pressed(&"accelerate"):
