@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://nhd55tk7kx8n"]
 
 [ext_resource type="Script" uid="uid://g2bo8a5av2sn" path="res://vehicles/vehicle.gd" id="1_qhfnb"]
+[ext_resource type="ArrayMesh" uid="uid://55rwd3gpba8k" path="res://ExportedMeshes/RaceWheel.res" id="2_ee12r"]
 [ext_resource type="ArrayMesh" uid="uid://bqrwin8ccgptt" path="res://vehicles/meshes/wheel.res" id="2_uwuq1"]
 [ext_resource type="ArrayMesh" uid="uid://cbpqxxd14g8un" path="res://vehicles/meshes/tow_truck.res" id="3_tv0o3"]
 [ext_resource type="Script" uid="uid://bpgd2w0obg3tl" path="res://vehicles/follow_camera.gd" id="4_wddne"]
@@ -109,9 +110,10 @@ suspension_stiffness = 30.0
 damping_compression = 0.88
 
 [node name="Wheel1" type="MeshInstance3D" parent="Body/Wheel1" unique_id=831596561]
+transform = Transform3D(-0.9999916, 0, -0.004094915, 0, 1, 0, 0.004094915, 0, -0.9999916, 0, 0, 0)
 layers = 2
 gi_mode = 2
-mesh = ExtResource("2_uwuq1")
+mesh = ExtResource("2_ee12r")
 
 [node name="Wheel2" type="VehicleWheel3D" parent="Body" unique_id=1833702058]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.573678, 0.000773743, -0.783403)

@@ -245,20 +245,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.96642, 11.294643, -7.19912
 
 [node name="InstancePos" type="Marker3D" parent="." unique_id=89081834]
 unique_name_in_owner = true
-transform = Transform3D(3.57628e-07, 0, -1, 0, 1, 0, 1, 0, 3.57628e-07, 35.48, 8.72405, 14.335)
+transform = Transform3D(0.029218838, 0, 0.99957305, 0, 1, 0, -0.99957305, 0, 0.029218838, -365.8207, 213.10947, 122.92506)
 
 [node name="TownModel" parent="." unique_id=1541596250 instance=ExtResource("1_amwer")]
 
-[node name="GrassMesh" parent="TownModel/Terrain" parent_id_path=PackedInt32Array(1541596250, 557846724) index="0" unique_id=558997258]
+[node name="GrassMesh" parent="TownModel/Terrain" parent_id_path=PackedInt32Array(1541596250, 1565713484) index="0" unique_id=1494760724]
 surface_material_override/0 = ExtResource("2_ubld8")
 
-[node name="RoadMesh" parent="TownModel/Terrain" parent_id_path=PackedInt32Array(1541596250, 557846724) index="2" unique_id=914339549]
+[node name="RoadMesh" parent="TownModel/Terrain" parent_id_path=PackedInt32Array(1541596250, 1565713484) index="2" unique_id=2127750659]
 surface_material_override/0 = ExtResource("3_8s61a")
 
-[node name="OuterGroundMesh" parent="TownModel/Terrain" parent_id_path=PackedInt32Array(1541596250, 557846724) index="4" unique_id=352844193]
+[node name="OuterGroundMesh" parent="TownModel/Terrain" parent_id_path=PackedInt32Array(1541596250, 1565713484) index="4" unique_id=143637519]
 surface_material_override/0 = ExtResource("2_ubld8")
 
-[node name="RacetrackMesh" parent="TownModel/Racetrack/RacetrackMain" parent_id_path=PackedInt32Array(1541596250, 1112698702) index="0" unique_id=1845615505]
+[node name="Racetrack" parent="TownModel" index="2" unique_id=91000227]
+transform = Transform3D(4.0543413, 1.1127062, 0, -1.370657, 3.2913344, 0, 0, 0, 4.9905877, -30, 60.427437, -70)
+
+[node name="RacetrackMesh" parent="TownModel/Racetrack/RacetrackMain" parent_id_path=PackedInt32Array(1541596250, 1492593468) index="0" unique_id=317753984]
 surface_material_override/0 = ExtResource("3_8s61a")
 
 [node name="Trees" type="Node3D" parent="TownModel" unique_id=637052945]
