@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://dd2ryqq6cqyg7"]
 
+[ext_resource type="Script" uid="uid://cyyle6l5n4oim" path="res://Control/MainLevelController.gd" id="1_fi62q"]
 [ext_resource type="Texture2D" uid="uid://cgh6h301kdmg0" path="res://Images/texture_04.png" id="1_jq6gy"]
 [ext_resource type="PackedScene" uid="uid://cc6x4eua15r43" path="res://vehicles/Chariot2.tscn" id="2_o3cl4"]
+[ext_resource type="Script" uid="uid://bebqhip6e8ocm" path="res://ProfessionalCamera.gd" id="2_rlx2o"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rj4so"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -28,7 +30,10 @@ size = Vector3(200, 1, 200)
 albedo_texture = ExtResource("1_jq6gy")
 uv1_scale = Vector3(200, 200, 200)
 
-[node name="MainLevel" type="Node3D" unique_id=15499575]
+[node name="MainLevel" type="Node3D" unique_id=15499575 node_paths=PackedStringArray("vehicles", "cameras")]
+script = ExtResource("1_fi62q")
+vehicles = [NodePath("Player1"), NodePath("Player2"), NodePath("Player3"), NodePath("Player4")]
+cameras = [NodePath("SplitScreen/GridContainer/SubViewPortPlayerContainer1/ViewPortPlayer1/PlayerCamera1"), NodePath("SplitScreen/GridContainer/SubViewPortPlayerContainer2/ViewPortPlayer2/PlayerCamera2"), NodePath("SplitScreen/GridContainer/SubViewPortPlayerContainer3/ViewPortPlayer3/PlayerCamera2"), NodePath("SplitScreen/GridContainer/SubViewPortPlayerContainer4/ViewPortPlayer4/PlayerCamera4")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=322062041]
 environment = SubResource("Environment_o3cl4")
@@ -63,13 +68,17 @@ size = Vector2i(960, 540)
 size_2d_override_stretch = true
 render_target_update_mode = 4
 
-[node name="PlayerCamera1" type="Camera3D" parent="SplitScreen/GridContainer/SubViewPortPlayerContainer1/ViewPortPlayer1" unique_id=1551900002]
-transform = Transform3D(1, 0, 0, 0, 0.31472152, 0.94918406, 0, -0.94918406, 0.31472152, 7.0783978, 14.314348, 0)
+[node name="PlayerCamera1" type="Camera3D" parent="SplitScreen/GridContainer/SubViewPortPlayerContainer1/ViewPortPlayer1" unique_id=1551900002 node_paths=PackedStringArray("target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0783978, 14.314348, 0)
+script = ExtResource("2_rlx2o")
+target = NodePath("../../../../../Player1")
 
 [node name="Label3D" type="Label3D" parent="SplitScreen/GridContainer/SubViewPortPlayerContainer1/ViewPortPlayer1/PlayerCamera1" unique_id=1036588776]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.6658729)
 billboard = 1
 text = "Camera 1"
+
+[node name="RayCast3D" type="RayCast3D" parent="SplitScreen/GridContainer/SubViewPortPlayerContainer1/ViewPortPlayer1/PlayerCamera1" unique_id=142730067]
 
 [node name="SubViewPortPlayerContainer2" type="SubViewportContainer" parent="SplitScreen/GridContainer" unique_id=1073447066]
 layout_mode = 2
@@ -81,12 +90,15 @@ size_2d_override_stretch = true
 render_target_update_mode = 4
 
 [node name="PlayerCamera2" type="Camera3D" parent="SplitScreen/GridContainer/SubViewPortPlayerContainer2/ViewPortPlayer2" unique_id=2144685972]
-transform = Transform3D(1, 0, 0, 0, 0.31472152, 0.94918406, 0, -0.94918406, 0.31472152, 3.213407, 14.314348, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.213407, 14.314348, 0)
+script = ExtResource("2_rlx2o")
 
 [node name="Label3D" type="Label3D" parent="SplitScreen/GridContainer/SubViewPortPlayerContainer2/ViewPortPlayer2/PlayerCamera2" unique_id=171004441]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.6658729)
 billboard = 1
 text = "Camera 2"
+
+[node name="RayCast3D" type="RayCast3D" parent="SplitScreen/GridContainer/SubViewPortPlayerContainer2/ViewPortPlayer2/PlayerCamera2" unique_id=1750304163]
 
 [node name="SubViewPortPlayerContainer3" type="SubViewportContainer" parent="SplitScreen/GridContainer" unique_id=121499882]
 layout_mode = 2
@@ -98,12 +110,15 @@ size_2d_override_stretch = true
 render_target_update_mode = 4
 
 [node name="PlayerCamera2" type="Camera3D" parent="SplitScreen/GridContainer/SubViewPortPlayerContainer3/ViewPortPlayer3" unique_id=339178663]
-transform = Transform3D(1, 0, 0, 0, 0.31472152, 0.94918406, 0, -0.94918406, 0.31472152, -1.9931583, 14.314348, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9931583, 14.314348, 0)
+script = ExtResource("2_rlx2o")
 
 [node name="Label3D" type="Label3D" parent="SplitScreen/GridContainer/SubViewPortPlayerContainer3/ViewPortPlayer3/PlayerCamera2" unique_id=546313346]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.6658729)
 billboard = 1
 text = "Camera 3"
+
+[node name="RayCast3D" type="RayCast3D" parent="SplitScreen/GridContainer/SubViewPortPlayerContainer3/ViewPortPlayer3/PlayerCamera2" unique_id=894406034]
 
 [node name="SubViewPortPlayerContainer4" type="SubViewportContainer" parent="SplitScreen/GridContainer" unique_id=1088132896]
 layout_mode = 2
@@ -115,12 +130,15 @@ size_2d_override_stretch = true
 render_target_update_mode = 4
 
 [node name="PlayerCamera4" type="Camera3D" parent="SplitScreen/GridContainer/SubViewPortPlayerContainer4/ViewPortPlayer4" unique_id=2028438988]
-transform = Transform3D(1, 0, 0, 0, 0.31472152, 0.94918406, 0, -0.94918406, 0.31472152, -6.0497227, 14.314348, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0497227, 14.314348, 0)
+script = ExtResource("2_rlx2o")
 
 [node name="Label3D" type="Label3D" parent="SplitScreen/GridContainer/SubViewPortPlayerContainer4/ViewPortPlayer4/PlayerCamera4" unique_id=2121937944]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.6658729)
 billboard = 1
 text = "Camera 4"
+
+[node name="RayCast3D" type="RayCast3D" parent="SplitScreen/GridContainer/SubViewPortPlayerContainer4/ViewPortPlayer4/PlayerCamera4" unique_id=516381619]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=58396827]
 
@@ -131,5 +149,14 @@ shape = SubResource("ConcavePolygonShape3D_rj4so")
 mesh = SubResource("BoxMesh_0f5ca")
 surface_material_override/0 = SubResource("StandardMaterial3D_mqceh")
 
-[node name="CarBase" parent="." unique_id=340126786 instance=ExtResource("2_o3cl4")]
+[node name="Player1" parent="." unique_id=340126786 instance=ExtResource("2_o3cl4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0018961, 2.5689144, -1.3034376)
+
+[node name="Player2" parent="." unique_id=1384655623 instance=ExtResource("2_o3cl4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.068469, 2.5689144, -1.3034376)
+
+[node name="Player3" parent="." unique_id=1640202880 instance=ExtResource("2_o3cl4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.315465, 2.5689144, -1.3034376)
+
+[node name="Player4" parent="." unique_id=969573952 instance=ExtResource("2_o3cl4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8347435, 2.5689144, -1.3034376)

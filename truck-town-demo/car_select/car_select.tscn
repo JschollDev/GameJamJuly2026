@@ -7,8 +7,8 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_ipfyv"]
 font = ExtResource("5_uu0k4")
-font_size = 76
-font_color = Color(0.16470589, 0.6156863, 0.56078434, 1)
+font_size = 127
+font_color = Color(0.18528661, 0.6831919, 0.622694, 1)
 shadow_size = 21
 shadow_color = Color(0, 0, 0, 1)
 
@@ -103,7 +103,7 @@ offset_bottom = 23.0
 grow_horizontal = 2
 offset_transform_enabled = true
 offset_transform_position = Vector2(0, 32)
-text = "Wheel Name Game Later"
+text = "WHEEL OF MISS-FORTUNE"
 label_settings = SubResource("LabelSettings_ipfyv")
 horizontal_alignment = 1
 

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cit5kj8rbqphf"]
 
 [ext_resource type="Script" uid="uid://g2bo8a5av2sn" path="res://vehicles/vehicle.gd" id="1_r806m"]
+[ext_resource type="Script" uid="uid://bdnemq57yn5nt" path="res://vehicles/spawn_hotfix.gd" id="1_smuaa"]
 [ext_resource type="Texture2D" uid="uid://yexl3pkv5tea" path="res://vehicles/particle_smoke.png" id="2_1gkvk"]
 [ext_resource type="ArrayMesh" uid="uid://bqrwin8ccgptt" path="res://vehicles/meshes/wheel.res" id="2_3cqaw"]
 [ext_resource type="ArrayMesh" uid="uid://b2xi556mwp7ue" path="res://vehicles/meshes/minivan.res" id="3_cqia8"]
@@ -53,6 +54,7 @@ point_count = 2
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [node name="CarBase" type="Node3D" unique_id=340126786]
+script = ExtResource("1_smuaa")
 
 [node name="Body" type="VehicleBody3D" parent="." unique_id=325766941 groups=["car"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00169557, 0.222867, -0.0955184)

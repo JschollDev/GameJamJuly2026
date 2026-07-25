@@ -1,5 +1,4 @@
 extends VehicleBody3D
-
 const STEER_SPEED = 1.5
 const STEER_LIMIT = 0.4
 const BRAKE_STRENGTH = 2.0
@@ -29,6 +28,8 @@ func _ready() -> void:
 	#assert(turbo_animator)
 	pass
 
+func _set_controller_id(pass_id: int) -> void:
+	controller_id = pass_id
 
 func _physics_process(delta: float) -> void:
 	_steer_target = turn_left_input - turn_right_input

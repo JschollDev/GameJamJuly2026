@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cc6x4eua15r43"]
 
+[ext_resource type="Script" uid="uid://bdnemq57yn5nt" path="res://vehicles/spawn_hotfix.gd" id="1_118sd"]
 [ext_resource type="Script" uid="uid://g2bo8a5av2sn" path="res://vehicles/vehicle.gd" id="1_m67tk"]
 [ext_resource type="Material" uid="uid://d3rh33v18jcj6" path="res://materials/master_material.tres" id="2_118sd"]
 [ext_resource type="ArrayMesh" uid="uid://bbyol3vxnxl5e" path="res://blender_exported_meshes/chariot/chariot_wheel_left.res" id="2_ye7l4"]
@@ -55,6 +56,7 @@ point_count = 2
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [node name="CarBase" type="Node3D" unique_id=340126786]
+script = ExtResource("1_118sd")
 
 [node name="Body" type="VehicleBody3D" parent="." unique_id=325766941 groups=["car"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00169557, 0.222867, -0.0955184)
