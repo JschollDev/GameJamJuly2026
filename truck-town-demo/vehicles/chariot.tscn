@@ -64,7 +64,7 @@ center_of_mass_mode = 1
 script = ExtResource("1_1jmt3")
 
 [node name="Wheel1" type="VehicleWheel3D" parent="Body" unique_id=966137444]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.573678, 0.02533181, -0.058934577)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.573678, 0.02533181, -0.048390873)
 steering = 0.5235988
 use_as_traction = true
 use_as_steering = true
@@ -82,7 +82,7 @@ mesh = ExtResource("2_r86em")
 surface_material_override/0 = ExtResource("4_38su2")
 
 [node name="Wheel2" type="VehicleWheel3D" parent="Body" unique_id=1898822315]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5077743, 0.00679712, -0.028874822)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5077743, 0.00679712, -0.018331118)
 steering = 0.5235988
 use_as_traction = true
 use_as_steering = true
