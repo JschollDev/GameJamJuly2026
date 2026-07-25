@@ -13,12 +13,13 @@
 [ext_resource type="AudioStream" uid="uid://2kuq7xwmeuhj" path="res://vehicles/honk_2.wav" id="10_fuhxi"]
 [ext_resource type="Texture2D" uid="uid://yexl3pkv5tea" path="res://vehicles/particle_smoke.png" id="11_4vbav"]
 [ext_resource type="Texture2D" uid="uid://c6nommjyxiscs" path="res://vehicles/blob_shadow.png" id="12_u56fx"]
+[ext_resource type="ArrayMesh" uid="uid://ds3s43x5adquq" path="res://blender_exported_meshes/chariot/chariot_body_neck.res" id="14_yd2ny"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_l7i2k"]
 friction = 0.5
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x74tc"]
-size = Vector3(0.954078, 1, 2.32662)
+size = Vector3(0.954078, 1, 4.796865)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_bpr2q"]
 random_pitch = 1.05
@@ -63,7 +64,7 @@ center_of_mass = Vector3(0, -0.25, 0)
 script = ExtResource("1_m67tk")
 
 [node name="Wheel1" type="VehicleWheel3D" parent="Body" unique_id=966137444]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8921578, 0.115169, 1.10416)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3122362, 0.34430188, 3.2326148)
 use_as_traction = true
 use_as_steering = true
 wheel_roll_influence = 0.4
@@ -94,7 +95,7 @@ gi_mode = 2
 mesh = ExtResource("2_ye7l4")
 
 [node name="Wheel3" type="VehicleWheel3D" parent="Body" unique_id=1269318468]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.88814056, 0.115169, 1.10416)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1133536, 0.34430188, 3.2326148)
 use_as_traction = true
 use_as_steering = true
 wheel_roll_influence = 0.4
@@ -131,7 +132,7 @@ gi_mode = 2
 mesh = ExtResource("4_ye7l4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Body" unique_id=2103581638]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.588269, 0.0774262)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47936535, 0.98424166)
 shape = SubResource("BoxShape3D_x74tc")
 
 [node name="CameraBase" type="Node3D" parent="Body" unique_id=2004720402]
@@ -213,3 +214,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.9
 
 [node name="TopDownCameraPosition" type="Marker3D" parent="Body" unique_id=1640557964]
 transform = Transform3D(-1, 8.74228e-08, 0, 3.82137e-15, 4.37114e-08, 1, 8.74228e-08, 1, -4.37114e-08, 0.00169557, 15.7771, 0.0955178)
+
+[node name="ChariotBodyNeck" type="MeshInstance3D" parent="Body" unique_id=1474903337]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.0677523, 0.1835107, -0.055612154)
+mesh = ExtResource("14_yd2ny")

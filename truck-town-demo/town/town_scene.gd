@@ -109,14 +109,3 @@ func set_mood(p_mood: Mood) -> void:
 		compatibility_light.rotation_degrees = $DirectionalLight3D.rotation_degrees
 		compatibility_light.light_color = $DirectionalLight3D.light_color
 		compatibility_light.light_energy = $DirectionalLight3D.light_energy * 0.2
-
-	if is_inside_tree():
-		var car := get_tree().get_nodes_in_group(&"car")[0]
-		if (
-				# Switch headlights on for nighttime.
-				turn_on_lights and not car.headlights_active
-		) or (
-				# Switch headlights off for daytime.
-				not turn_on_lights and car.headlights_active
-		):
-			get_tree().call_group(&"car", &"toggle_headlights")
