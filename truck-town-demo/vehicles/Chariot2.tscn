@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cc6x4eua15r43"]
 
 [ext_resource type="Script" uid="uid://g2bo8a5av2sn" path="res://vehicles/vehicle.gd" id="1_m67tk"]
+[ext_resource type="Material" uid="uid://d3rh33v18jcj6" path="res://materials/master_material.tres" id="2_118sd"]
 [ext_resource type="ArrayMesh" uid="uid://bbyol3vxnxl5e" path="res://blender_exported_meshes/chariot/chariot_wheel_left.res" id="2_ye7l4"]
 [ext_resource type="ArrayMesh" uid="uid://b1ar6ip7p2ptj" path="res://blender_exported_meshes/chariot/chariot_wheel_right.res" id="3_118sd"]
 [ext_resource type="ArrayMesh" uid="uid://belak24qcbn58" path="res://blender_exported_meshes/chariot/chariot_body.res" id="4_ye7l4"]
@@ -75,6 +76,7 @@ damping_compression = 0.88
 
 [node name="Wheel1" type="MeshInstance3D" parent="Body/Wheel1" unique_id=1257104377]
 layers = 2
+material_override = ExtResource("2_118sd")
 gi_mode = 2
 mesh = ExtResource("2_ye7l4")
 
@@ -90,6 +92,7 @@ damping_compression = 0.88
 
 [node name="Wheel2" type="MeshInstance3D" parent="Body/Wheel2" unique_id=1248127195]
 layers = 2
+material_override = ExtResource("2_118sd")
 gi_mode = 2
 mesh = ExtResource("2_ye7l4")
 
@@ -106,6 +109,7 @@ damping_compression = 0.88
 
 [node name="Wheel3" type="MeshInstance3D" parent="Body/Wheel3" unique_id=829204557]
 layers = 2
+material_override = ExtResource("2_118sd")
 gi_mode = 2
 mesh = ExtResource("3_118sd")
 
@@ -121,12 +125,14 @@ damping_compression = 0.88
 
 [node name="Wheel4" type="MeshInstance3D" parent="Body/Wheel4" unique_id=993561784]
 layers = 2
+material_override = ExtResource("2_118sd")
 gi_mode = 2
 mesh = ExtResource("3_118sd")
 
 [node name="Body" type="MeshInstance3D" parent="Body" unique_id=397755799]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.37274665)
 layers = 2
+material_override = ExtResource("2_118sd")
 gi_mode = 2
 mesh = ExtResource("4_ye7l4")
 
@@ -204,4 +210,5 @@ transform = Transform3D(-1, 8.74228e-08, 0, 3.82137e-15, 4.37114e-08, 1, 8.74228
 
 [node name="ChariotBodyNeck" type="MeshInstance3D" parent="Body" unique_id=1474903337]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.0677523, 0.1835107, -0.055612154)
+material_override = ExtResource("2_118sd")
 mesh = ExtResource("14_yd2ny")

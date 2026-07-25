@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dett34gq1qoy"]
+
+[ext_resource type="Script" uid="uid://dn4d8fcm1dif6" path="res://finish_line_area_collision.gd" id="1_pahn5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3uc41"]
+
+[node name="Node3D" type="Node3D" unique_id=421687513]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=809446116]
+script = ExtResource("1_pahn5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1062786361]
+shape = SubResource("BoxShape3D_3uc41")
