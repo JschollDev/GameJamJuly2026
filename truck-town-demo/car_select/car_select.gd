@@ -92,3 +92,7 @@ func _on_mute_toggled(muted: bool) -> void:
 
 func _on_volume_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_linear(audio_master, value)
+
+
+func _on_chariot_pressed() -> void:
+	_load_scene(preload("res://vehicles/chariot.tscn"))

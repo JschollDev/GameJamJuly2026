@@ -8,6 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://eu0i3m0c3kki" path="res://car_select/audio_off.png" id="6_uu0k4"]
 [ext_resource type="Texture2D" uid="uid://7imikkhjt0t" path="res://trucktown.png" id="7_uu0k4"]
 
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_r86em"]
+width = 256
+height = 256
+generate_mipmaps = false
+
 [sub_resource type="ButtonGroup" id="ButtonGroup_lcrm3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5qrv"]
@@ -81,6 +86,12 @@ layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 icon = ExtResource("4_y5qrv")
+
+[node name="Chariot" type="Button" parent="CarContainer" unique_id=2137242952]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+icon = SubResource("NoiseTexture2D_r86em")
 
 [node name="MoodPanel" type="PanelContainer" parent="." unique_id=987428814]
 layout_mode = 1
@@ -233,5 +244,6 @@ expand_mode = 1
 [connection signal="pressed" from="CarContainer/MiniVan" to="." method="_on_mini_van_pressed"]
 [connection signal="pressed" from="CarContainer/TrailerTruck" to="." method="_on_trailer_truck_pressed"]
 [connection signal="pressed" from="CarContainer/TowTruck" to="." method="_on_tow_truck_pressed"]
+[connection signal="pressed" from="CarContainer/Chariot" to="." method="_on_chariot_pressed"]
 [connection signal="toggled" from="OptionsPanel/MarginContainer/HBoxContainer/Audio/Mute" to="." method="_on_mute_toggled"]
 [connection signal="value_changed" from="OptionsPanel/MarginContainer/HBoxContainer/Audio/Volume" to="." method="_on_volume_value_changed"]
