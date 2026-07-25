@@ -6,8 +6,8 @@
 [ext_resource type="ArrayMesh" uid="uid://bbyol3vxnxl5e" path="res://blender_exported_meshes/chariot/chariot_wheel_left.res" id="2_ye7l4"]
 [ext_resource type="ArrayMesh" uid="uid://b1ar6ip7p2ptj" path="res://blender_exported_meshes/chariot/chariot_wheel_right.res" id="3_118sd"]
 [ext_resource type="ArrayMesh" uid="uid://belak24qcbn58" path="res://blender_exported_meshes/chariot/chariot_body.res" id="4_ye7l4"]
-[ext_resource type="AudioStream" uid="uid://2ukhlukq60ge" path="res://vehicles/engine.wav" id="5_t0j44"]
 [ext_resource type="AudioStream" uid="uid://bwmbj0hptxpp2" path="res://vehicles/impact_1.wav" id="6_q8rog"]
+[ext_resource type="AudioStream" uid="uid://b18h41n48lfar" path="res://Audio/rolling_tire_on_grav.wav" id="6_yd2ny"]
 [ext_resource type="AudioStream" uid="uid://g504na8iwq65" path="res://vehicles/impact_2.wav" id="7_mxwlm"]
 [ext_resource type="AudioStream" uid="uid://cnrem1y1qiu0m" path="res://vehicles/impact_3.wav" id="8_7l5n3"]
 [ext_resource type="AudioStream" uid="uid://dyq28bk7fqj44" path="res://vehicles/impact_4.wav" id="9_42k8u"]
@@ -71,9 +71,9 @@ use_as_traction = true
 use_as_steering = true
 wheel_roll_influence = 0.4
 wheel_radius = 0.8
-wheel_friction_slip = 5.0
-suspension_travel = 2.0
-suspension_stiffness = 40.0
+wheel_friction_slip = 10.0
+suspension_travel = 5.0
+suspension_stiffness = 60.0
 damping_compression = 0.88
 
 [node name="Wheel1" type="MeshInstance3D" parent="Body/Wheel1" unique_id=1257104377]
@@ -87,9 +87,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8921578, 0.115169, -0.78340
 use_as_traction = true
 wheel_roll_influence = 0.4
 wheel_radius = 0.8
-wheel_friction_slip = 5.0
-suspension_travel = 2.0
-suspension_stiffness = 40.0
+wheel_friction_slip = 10.0
+suspension_travel = 5.0
+suspension_stiffness = 60.0
 damping_compression = 0.88
 
 [node name="Wheel2" type="MeshInstance3D" parent="Body/Wheel2" unique_id=1248127195]
@@ -104,9 +104,9 @@ use_as_traction = true
 use_as_steering = true
 wheel_roll_influence = 0.4
 wheel_radius = 0.8
-wheel_friction_slip = 5.0
-suspension_travel = 2.0
-suspension_stiffness = 40.0
+wheel_friction_slip = 10.0
+suspension_travel = 5.0
+suspension_stiffness = 60.0
 damping_compression = 0.88
 
 [node name="Wheel3" type="MeshInstance3D" parent="Body/Wheel3" unique_id=829204557]
@@ -120,9 +120,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.88814056, 0.115169, -0.783
 use_as_traction = true
 wheel_roll_influence = 0.4
 wheel_radius = 0.8
-wheel_friction_slip = 5.0
-suspension_travel = 2.0
-suspension_stiffness = 40.0
+wheel_friction_slip = 10.0
+suspension_travel = 5.0
+suspension_stiffness = 60.0
 damping_compression = 0.88
 
 [node name="Wheel4" type="MeshInstance3D" parent="Body/Wheel4" unique_id=993561784]
@@ -143,7 +143,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47936535, 0.98424166)
 shape = SubResource("BoxShape3D_x74tc")
 
 [node name="EngineSound" type="AudioStreamPlayer3D" parent="Body" unique_id=706566980]
-stream = ExtResource("5_t0j44")
+stream = ExtResource("6_yd2ny")
 pitch_scale = 0.05
 autoplay = true
 bus = &"Vehicle"

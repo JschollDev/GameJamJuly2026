@@ -10,7 +10,7 @@ const BRAKE_STRENGTH = 2.0
 #var turbo_animator: AnimationPlayer
 
 var previous_speed := linear_velocity.length()
-var turbo_active := false
+var turbo_active := true
 var headlights_active := false
 var _steer_target := 0.0
 var is_compatibility := RenderingServer.get_current_rendering_method() == "gl_compatibility"
