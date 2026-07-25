@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://g2bo8a5av2sn" path="res://vehicles/vehicle.gd" id="1_1jmt3"]
 [ext_resource type="ArrayMesh" uid="uid://bbyol3vxnxl5e" path="res://blender_exported_meshes/chariot/chariot_wheel_left.res" id="2_r86em"]
-[ext_resource type="ArrayMesh" uid="uid://21pk51ohwmh0" path="res://blender_exported_meshes/chariot/chariot_body.res" id="3_38su2"]
+[ext_resource type="ArrayMesh" path="res://blender_exported_meshes/chariot/chariot_body.res" id="3_38su2"]
 [ext_resource type="Material" uid="uid://dgadu277k83cm" path="res://materials/master_pallete_material.tres" id="4_38su2"]
 [ext_resource type="ArrayMesh" uid="uid://b1ar6ip7p2ptj" path="res://blender_exported_meshes/chariot/chariot_wheel_right.res" id="4_347il"]
 [ext_resource type="Script" uid="uid://bpgd2w0obg3tl" path="res://vehicles/follow_camera.gd" id="4_r86em"]
