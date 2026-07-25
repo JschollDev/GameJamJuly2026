@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://g2bo8a5av2sn" path="res://vehicles/vehicle.gd" id="1_1jmt3"]
 [ext_resource type="ArrayMesh" uid="uid://bbyol3vxnxl5e" path="res://blender_exported_meshes/chariot/chariot_wheel_left.res" id="2_r86em"]
-[ext_resource type="ArrayMesh" uid="uid://21pk51ohwmh0" path="res://blender_exported_meshes/chariot/chariot_body.res" id="3_38su2"]
+[ext_resource type="ArrayMesh" path="res://blender_exported_meshes/chariot/chariot_body.res" id="3_38su2"]
 [ext_resource type="Material" uid="uid://dgadu277k83cm" path="res://materials/master_pallete_material.tres" id="4_38su2"]
 [ext_resource type="ArrayMesh" uid="uid://b1ar6ip7p2ptj" path="res://blender_exported_meshes/chariot/chariot_wheel_right.res" id="4_347il"]
 [ext_resource type="Script" uid="uid://bpgd2w0obg3tl" path="res://vehicles/follow_camera.gd" id="4_r86em"]
@@ -64,7 +64,7 @@ center_of_mass_mode = 1
 script = ExtResource("1_1jmt3")
 
 [node name="Wheel1" type="VehicleWheel3D" parent="Body" unique_id=966137444]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.573678, 0.02533181, -0.058934577)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.573678, 0.02533181, -0.048390873)
 steering = 0.5235988
 use_as_traction = true
 use_as_steering = true
@@ -82,7 +82,7 @@ mesh = ExtResource("2_r86em")
 surface_material_override/0 = ExtResource("4_38su2")
 
 [node name="Wheel2" type="VehicleWheel3D" parent="Body" unique_id=1898822315]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5077743, 0.00679712, -0.028874822)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5077743, 0.00679712, -0.018331118)
 steering = 0.5235988
 use_as_traction = true
 use_as_steering = true
