@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://dd2ryqq6cqyg7"]
+
+[ext_resource type="PackedScene" uid="uid://cpomudbtopok7" path="res://vehicles/chariot.tscn" id="1_jq6gy"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rj4so"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_jq6gy"]
+sky_material = SubResource("ProceduralSkyMaterial_rj4so")
+
+[sub_resource type="Environment" id="Environment_o3cl4"]
+background_mode = 2
+sky = SubResource("Sky_jq6gy")
+glow_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_rj4so"]
+offsets = PackedFloat32Array(0.2, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_jq6gy"]
+noise_type = 2
+frequency = 0.03
+cellular_jitter = 3.0
+cellular_return_type = 0
+domain_warp_enabled = true
+domain_warp_type = 1
+domain_warp_amplitude = 50.0
+domain_warp_fractal_type = 2
+domain_warp_fractal_lacunarity = 1.5
+domain_warp_fractal_gain = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_o3cl4"]
+noise = SubResource("FastNoiseLite_jq6gy")
+color_ramp = SubResource("Gradient_rj4so")
+seamless = true
+
+[sub_resource type="Terrain3DMaterial" id="Terrain3DMaterial_fi62q"]
+_shader_parameters = {
+&"bias_distance": null,
+&"blend_sharpness": null,
+&"depth_blur": null,
+&"enable_macro_variation": null,
+&"enable_projection": null,
+&"flat_terrain_normals": null,
+&"macro_variation1": null,
+&"macro_variation2": null,
+&"macro_variation_slope": null,
+&"mipmap_bias": null,
+&"noise1_angle": null,
+&"noise1_offset": null,
+&"noise1_scale": null,
+&"noise2_scale": null,
+&"noise_texture": SubResource("NoiseTexture2D_o3cl4"),
+&"projection_threshold": null
+}
+show_checkered = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rlx2o"]
+transparency = 4
+cull_mode = 2
+vertex_color_use_as_albedo = true
+backlight_enabled = true
+backlight = Color(0.5, 0.5, 0.5, 1)
+distance_fade_mode = 1
+distance_fade_min_distance = 128.0
+distance_fade_max_distance = 96.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_ri6rb"]
+generated_type = 1
+height_offset = 0.5
+material_override = SubResource("StandardMaterial3D_rlx2o")
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 128.0
+
+[sub_resource type="Terrain3DAssets" id="Terrain3DAssets_taiwb"]
+mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_ri6rb")])
+
+[node name="MainLevel" type="Node3D" unique_id=15499575]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=322062041]
+environment = SubResource("Environment_o3cl4")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1673668411]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Terrain3D" type="Terrain3D" parent="." unique_id=245721149]
+data_directory = "res://MainLevelTerrainData"
+material = SubResource("Terrain3DMaterial_fi62q")
+assets = SubResource("Terrain3DAssets_taiwb")
+show_checkered = true
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="CarBase" parent="." unique_id=340126786 instance=ExtResource("1_jq6gy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.95438, 9.201737, 0.11968915)
