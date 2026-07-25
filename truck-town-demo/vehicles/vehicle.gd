@@ -16,6 +16,11 @@ var headlights_active := false
 var _steer_target := 0.0
 var is_compatibility := RenderingServer.get_current_rendering_method() == "gl_compatibility"
 
+var turn_left_input: float = 0.0
+var turn_right_input: float = 0.0
+var accelerate_input: float = 0.0
+var reverse_input: float = 0.0
+
 @onready var desired_engine_pitch: float = $EngineSound.pitch_scale
 
 
@@ -26,7 +31,7 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	_steer_target = Input.get_axis(&"turn_right", &"turn_left")
+	_steer_target = turn_left_input - turn_right_input
 	_steer_target *= STEER_LIMIT
 
 	# Engine sound simulation (not realistic, as this car script has no notion of gear or engine RPM).
@@ -38,9 +43,7 @@ func _physics_process(delta: float) -> void:
 		# Sudden velocity change, likely due to a collision. Play an impact sound to give audible feedback,
 		# and vibrate for haptic feedback.
 		$ImpactSound.play()
-		Input.vibrate_handheld(100)
-		for joypad in Input.get_connected_joypads():
-			Input.start_joy_vibration(joypad, 0.0, 0.5, 0.1)
+		Input.start_joy_vibration(controller_id, 0.0, 0.5, 0.1)
 
 	#var turbo_pressed := Input.is_action_pressed(&"boost")
 	#var new_turbo_active := turbo_pressed and turbometer.value > 0
@@ -59,7 +62,7 @@ func _physics_process(delta: float) -> void:
 	#	constant_force = Vector3()
 
 	# Automatically accelerate when using touch controls (reversing overrides acceleration).
-	if DisplayServer.is_touchscreen_available() or Input.is_action_pressed(&"accelerate"):
+	if DisplayServer.is_touchscreen_available() or accelerate_input > 0.0:
 		# Increase engine force at low speeds to make the initial acceleration faster.
 		var speed := linear_velocity.length()
 		if speed < 5.0 and not is_zero_approx(speed):
@@ -69,11 +72,11 @@ func _physics_process(delta: float) -> void:
 
 		if not DisplayServer.is_touchscreen_available():
 			# Apply analog throttle factor for more subtle acceleration if not fully holding down the trigger.
-			engine_force *= Input.get_action_strength(&"accelerate")
+			engine_force *= accelerate_input
 	else:
 		engine_force = 0.0
 
-	if Input.is_action_pressed(&"reverse"):
+	if reverse_input > 0.0:
 		# Increase engine force at low speeds to make the initial reversing faster.
 		var speed := linear_velocity.length()
 		if speed < 5.0 and not is_zero_approx(speed):
@@ -82,7 +85,7 @@ func _physics_process(delta: float) -> void:
 			engine_force = -engine_force_value
 
 		# Apply analog brake factor for more subtle braking if not fully holding down the trigger.
-		engine_force *= Input.get_action_strength(&"reverse")
+		engine_force *= reverse_input
 
 	steering = move_toward(steering, _steer_target, STEER_SPEED * delta)
 
@@ -90,6 +93,24 @@ func _physics_process(delta: float) -> void:
 
 
 func _input(p_input_event: InputEvent) -> void:
+	if not p_input_event is InputEventJoypadButton and not p_input_event is InputEventJoypadMotion:
+		return
+
+	if p_input_event.device != controller_id:
+		return
+
+	if p_input_event.is_action(&"turn_left", true):
+		turn_left_input = p_input_event.get_action_strength(&"turn_left", true)
+
+	if p_input_event.is_action(&"turn_right", true):
+		turn_right_input = p_input_event.get_action_strength(&"turn_right", true)
+
+	if p_input_event.is_action(&"accelerate", true):
+		accelerate_input = p_input_event.get_action_strength(&"accelerate", true)
+
+	if p_input_event.is_action(&"reverse", true):
+		reverse_input = p_input_event.get_action_strength(&"reverse", true)
+
 	if p_input_event.is_action_pressed(&"toggle_headlights"):
 		toggle_headlights()
 
@@ -112,11 +133,11 @@ func toggle_headlights() -> void:
 			# (since headlights cast shadows).
 			target_energy *= 0.5
 		t.tween_property(
-				node,
-				^"light_energy",
-				target_energy,
-				0.2
-			).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+			node,
+			^"light_energy",
+			target_energy,
+			0.2
+		).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 
 		# Hide light node at the end to avoid performance impact when headlights are off
 		# (Godot still renders lights with `light_energy == 0.0` otherwise).

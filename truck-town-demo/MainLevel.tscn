@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://dd2ryqq6cqyg7"]
 
+[ext_resource type="Texture2D" uid="uid://cgh6h301kdmg0" path="res://Images/texture_04.png" id="1_jq6gy"]
+[ext_resource type="PackedScene" uid="uid://cc6x4eua15r43" path="res://vehicles/Chariot2.tscn" id="2_o3cl4"]
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rj4so"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -11,6 +14,19 @@ sky_material = SubResource("ProceduralSkyMaterial_rj4so")
 background_mode = 2
 sky = SubResource("Sky_jq6gy")
 glow_enabled = true
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_rj4so"]
+data = PackedVector3Array(-100, 0.5, 100, 100, 0.5, 100, -100, -0.5, 100, 100, 0.5, 100, 100, -0.5, 100, -100, -0.5, 100, 100, 0.5, -100, -100, 0.5, -100, 100, -0.5, -100, -100, 0.5, -100, -100, -0.5, -100, 100, -0.5, -100, 100, 0.5, 100, 100, 0.5, -100, 100, -0.5, 100, 100, 0.5, -100, 100, -0.5, -100, 100, -0.5, 100, -100, 0.5, -100, -100, 0.5, 100, -100, -0.5, -100, -100, 0.5, 100, -100, -0.5, 100, -100, -0.5, -100, 100, 0.5, 100, -100, 0.5, 100, 100, 0.5, -100, -100, 0.5, 100, -100, 0.5, -100, 100, 0.5, -100, -100, -0.5, 100, 100, -0.5, 100, -100, -0.5, -100, 100, -0.5, 100, 100, -0.5, -100, -100, -0.5, -100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ipfyv"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_0f5ca"]
+material = SubResource("StandardMaterial3D_ipfyv")
+size = Vector3(200, 1, 200)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mqceh"]
+albedo_texture = ExtResource("1_jq6gy")
+uv1_scale = Vector3(200, 200, 200)
 
 [node name="MainLevel" type="Node3D" unique_id=15499575]
 
@@ -48,7 +64,7 @@ size_2d_override_stretch = true
 render_target_update_mode = 4
 
 [node name="PlayerCamera1" type="Camera3D" parent="SplitScreen/GridContainer/SubViewPortPlayerContainer1/ViewPortPlayer1" unique_id=1551900002]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8010406, 14.314348, 0)
+transform = Transform3D(1, 0, 0, 0, 0.31472152, 0.94918406, 0, -0.94918406, 0.31472152, 7.0783978, 14.314348, 0)
 
 [node name="Label3D" type="Label3D" parent="SplitScreen/GridContainer/SubViewPortPlayerContainer1/ViewPortPlayer1/PlayerCamera1" unique_id=1036588776]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.6658729)
@@ -65,7 +81,7 @@ size_2d_override_stretch = true
 render_target_update_mode = 4
 
 [node name="PlayerCamera2" type="Camera3D" parent="SplitScreen/GridContainer/SubViewPortPlayerContainer2/ViewPortPlayer2" unique_id=2144685972]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0639501, 14.314348, 0)
+transform = Transform3D(1, 0, 0, 0, 0.31472152, 0.94918406, 0, -0.94918406, 0.31472152, 3.213407, 14.314348, 0)
 
 [node name="Label3D" type="Label3D" parent="SplitScreen/GridContainer/SubViewPortPlayerContainer2/ViewPortPlayer2/PlayerCamera2" unique_id=171004441]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.6658729)
@@ -82,7 +98,7 @@ size_2d_override_stretch = true
 render_target_update_mode = 4
 
 [node name="PlayerCamera2" type="Camera3D" parent="SplitScreen/GridContainer/SubViewPortPlayerContainer3/ViewPortPlayer3" unique_id=339178663]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2705154, 14.314348, 0)
+transform = Transform3D(1, 0, 0, 0, 0.31472152, 0.94918406, 0, -0.94918406, 0.31472152, -1.9931583, 14.314348, 0)
 
 [node name="Label3D" type="Label3D" parent="SplitScreen/GridContainer/SubViewPortPlayerContainer3/ViewPortPlayer3/PlayerCamera2" unique_id=546313346]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.6658729)
@@ -99,9 +115,21 @@ size_2d_override_stretch = true
 render_target_update_mode = 4
 
 [node name="PlayerCamera4" type="Camera3D" parent="SplitScreen/GridContainer/SubViewPortPlayerContainer4/ViewPortPlayer4" unique_id=2028438988]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.32708, 14.314348, 0)
+transform = Transform3D(1, 0, 0, 0, 0.31472152, 0.94918406, 0, -0.94918406, 0.31472152, -6.0497227, 14.314348, 0)
 
 [node name="Label3D" type="Label3D" parent="SplitScreen/GridContainer/SubViewPortPlayerContainer4/ViewPortPlayer4/PlayerCamera4" unique_id=2121937944]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.6658729)
 billboard = 1
 text = "Camera 4"
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=58396827]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=43836989]
+shape = SubResource("ConcavePolygonShape3D_rj4so")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=239631523]
+mesh = SubResource("BoxMesh_0f5ca")
+surface_material_override/0 = SubResource("StandardMaterial3D_mqceh")
+
+[node name="CarBase" parent="." unique_id=340126786 instance=ExtResource("2_o3cl4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0018961, 2.5689144, -1.3034376)
