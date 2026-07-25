@@ -2,8 +2,7 @@
 
 [ext_resource type="Script" uid="uid://g2bo8a5av2sn" path="res://vehicles/vehicle.gd" id="1_1jmt3"]
 [ext_resource type="ArrayMesh" uid="uid://bbyol3vxnxl5e" path="res://blender_exported_meshes/chariot/chariot_wheel_left.res" id="2_r86em"]
-[ext_resource type="ArrayMesh" path="res://blender_exported_meshes/chariot/chariot_body.res" id="3_38su2"]
-[ext_resource type="Material" uid="uid://dgadu277k83cm" path="res://materials/master_pallete_material.tres" id="4_38su2"]
+[ext_resource type="ArrayMesh" uid="uid://ch7hpxnr4lc56" path="res://blender_exported_meshes/chariot/chariot_body.res" id="3_38su2"]
 [ext_resource type="ArrayMesh" uid="uid://b1ar6ip7p2ptj" path="res://blender_exported_meshes/chariot/chariot_wheel_right.res" id="4_347il"]
 [ext_resource type="Script" uid="uid://bpgd2w0obg3tl" path="res://vehicles/follow_camera.gd" id="4_r86em"]
 [ext_resource type="AudioStream" uid="uid://2ukhlukq60ge" path="res://vehicles/engine.wav" id="5_347il"]
@@ -79,7 +78,6 @@ transform = Transform3D(0.59, 0, 0, 0, 0.59, 0, 0, 0, 0.59, 0, 0, 0)
 layers = 2
 gi_mode = 2
 mesh = ExtResource("2_r86em")
-surface_material_override/0 = ExtResource("4_38su2")
 
 [node name="Wheel2" type="VehicleWheel3D" parent="Body" unique_id=1898822315]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5077743, 0.00679712, -0.018331118)
@@ -97,14 +95,12 @@ transform = Transform3D(0.59, 0, 0, 0, 0.59, 0, 0, 0, 0.59, 0, 0, 0)
 layers = 2
 gi_mode = 2
 mesh = ExtResource("4_347il")
-surface_material_override/0 = ExtResource("4_38su2")
 
 [node name="Body" type="MeshInstance3D" parent="Body" unique_id=397755799]
 transform = Transform3D(-0.5902058, 0, 5.159743e-08, 0, 0.5902058, 0, -5.159743e-08, 0, -0.5902058, 0, 0, 0)
 layers = 2
 gi_mode = 2
 mesh = ExtResource("3_38su2")
-surface_material_override/0 = ExtResource("4_38su2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Body" unique_id=2103581638]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.588269, 0.29579997)
@@ -175,4 +171,3 @@ transform = Transform3D(-1, 8.74228e-08, 0, 3.82137e-15, 4.37114e-08, 1, 8.74228
 [node name="ChariotBodyNeck" type="MeshInstance3D" parent="." unique_id=133308384]
 transform = Transform3D(-0.59, 0, -8.908752e-08, 0, 0.59, 0, 8.908752e-08, 0, -0.59, 0.0080477595, 0.22527874, -0.2745272)
 mesh = ExtResource("14_q8q0m")
-surface_material_override/0 = ExtResource("4_38su2")
