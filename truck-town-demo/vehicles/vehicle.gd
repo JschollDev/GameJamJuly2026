@@ -40,6 +40,10 @@ func _ready() -> void:
 
 func _set_controller_id(pass_id: int) -> void:
 	controller_id = pass_id
+	print('passed controller ID '+str(pass_id)+"to "+name)
+
+func set_spawn_location(spawn_point: Node3D) -> void:
+	global_position = spawn_point.global_position
 
 func _physics_process(delta: float) -> void:
 	if not input_enabled:

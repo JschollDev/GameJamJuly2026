@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://cyyle6l5n4oim" path="res://Control/MainLevelController.gd" id="1_fi62q"]
 [ext_resource type="Shader" uid="uid://wrdevexoyuy5" path="res://whoami.gdshader" id="2_cb5hs"]
 [ext_resource type="PackedScene" uid="uid://folceuqvupuk" path="res://vehicles/PlayerVehicles/Boat.tscn" id="2_cmshu"]
-[ext_resource type="PackedScene" uid="uid://cc6x4eua15r43" path="res://vehicles/PlayerVehicles/Chariot2.tscn" id="2_o3cl4"]
 [ext_resource type="Script" uid="uid://bebqhip6e8ocm" path="res://ProfessionalCamera.gd" id="2_rlx2o"]
 [ext_resource type="Script" uid="uid://c8bacvt7ynq6e" path="res://whoami.gd" id="2_taiwb"]
 [ext_resource type="FontFile" uid="uid://bxcg0iewa4okw" path="res://Fonts/Germania_One/GermaniaOne-Regular.ttf" id="3_ri6rb"]
@@ -127,7 +126,7 @@ data = PackedVector3Array(0.3707, -0.1943, -0.90559995, 0.34759998, -0.242, -0.9
 
 [node name="MainLevel" type="Node3D" unique_id=15499575 node_paths=PackedStringArray("cameras", "spawn_points", "SubViews")]
 script = ExtResource("1_fi62q")
-vehicles = Array[PackedScene]([ExtResource("2_cmshu"), ExtResource("3_xn14s"), ExtResource("4_1h6ra")])
+vehicles = Array[PackedScene]([ExtResource("3_xn14s"), ExtResource("4_1h6ra"), ExtResource("2_cmshu"), ExtResource("3_xn14s")])
 cameras = [NodePath("SplitScreen/GridContainer/SubViewPortPlayerContainer1/ViewPortPlayer1/PlayerCamera1"), NodePath("SplitScreen/GridContainer/SubViewPortPlayerContainer2/ViewPortPlayer2/PlayerCamera2"), NodePath("SplitScreen/GridContainer/SubViewPortPlayerContainer3/ViewPortPlayer3/PlayerCamera2"), NodePath("SplitScreen/GridContainer/SubViewPortPlayerContainer4/ViewPortPlayer4/PlayerCamera4")]
 spawn_points = [NodePath("PlayerSpawn1"), NodePath("PlayerSpawn2"), NodePath("PlayerSpawn3"), NodePath("PlayerSpawn4")]
 SubViews = [NodePath("SplitScreen/GridContainer/SubViewPortPlayerContainer1"), NodePath("SplitScreen/GridContainer/SubViewPortPlayerContainer2"), NodePath("SplitScreen/GridContainer/SubViewPortPlayerContainer3"), NodePath("SplitScreen/GridContainer/SubViewPortPlayerContainer4")]
@@ -174,7 +173,7 @@ render_target_update_mode = 4
 [node name="PlayerCamera1" type="Camera3D" parent="SplitScreen/GridContainer/SubViewPortPlayerContainer1/ViewPortPlayer1" unique_id=1551900002 node_paths=PackedStringArray("target")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0783978, 14.314348, 0)
 script = ExtResource("2_rlx2o")
-target = NodePath("../../../../../Player1")
+target = NodePath("")
 
 [node name="RayCast3D" type="RayCast3D" parent="SplitScreen/GridContainer/SubViewPortPlayerContainer1/ViewPortPlayer1/PlayerCamera1" unique_id=142730067]
 
@@ -395,18 +394,6 @@ label_settings = SubResource("LabelSettings_0rh38")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Player1" parent="." unique_id=340126786 instance=ExtResource("2_o3cl4")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 67.90524, 14.069504, 0)
-
-[node name="Player2" parent="." unique_id=1384655623 instance=ExtResource("2_o3cl4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.1431, 14.069504, 0)
-
-[node name="Player3" parent="." unique_id=1640202880 instance=ExtResource("2_o3cl4")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 11.069504, 61.709908)
-
-[node name="Player4" parent="." unique_id=969573952 instance=ExtResource("2_o3cl4")]
-transform = Transform3D(0, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, 0, 0, 13.069504, -62.45868)
-
 [node name="CountDown" type="Panel" parent="." unique_id=1384288914 node_paths=PackedStringArray("winner_label")]
 visible = false
 anchors_preset = 15
@@ -459,13 +446,13 @@ surface_material_override/0 = SubResource("StandardMaterial3D_78kfj")
 shape = SubResource("ConcavePolygonShape3D_d1soc")
 
 [node name="PlayerSpawn1" type="Node3D" parent="." unique_id=1090573638]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.956783, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.956783, 18.355545, 0)
 
 [node name="PlayerSpawn2" type="Node3D" parent="." unique_id=379576873]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 64.85888)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.355545, 64.85888)
 
 [node name="PlayerSpawn3" type="Node3D" parent="." unique_id=2133627287]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.81514, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.81514, 18.355545, 0)
 
 [node name="PlayerSpawn4" type="Node3D" parent="." unique_id=451564299]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -60.557037)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.355545, -60.557037)

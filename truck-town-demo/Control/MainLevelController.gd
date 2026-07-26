@@ -10,9 +10,9 @@ extends Node
 var dead: int = 0
 var player_dead: = [false,false,false,false]
 var winner: int
-var game_active: bool = true
+var game_active: bool = false
 
-var spawned_vehicles: Array[Node] = []
+var spawned_vehicles: Array[Node3D]
 
 func _ready() -> void:
 	GameManager.state_changed.connect(_on_state_changed)
@@ -24,17 +24,28 @@ func _grab_player_vehicle_choice() -> void:
 
 func spawn_vehicles() -> void:
 	for player in 4:
+		print('spawning player'+str(player))
 		var player_vehicle_choice: int = GameManager._grab_player_vehicle_choice(player)
-		var vehicle: Node = vehicles[player_vehicle_choice].instantiate()
+		print('player '+str(player)+' choice is '+str(player_vehicle_choice))
+		var vehicle: Node3D = vehicles[player_vehicle_choice].instantiate()
 		add_child(vehicle)
-		vehicle.global_transform = spawn_points[vehicle].global_transform
 		spawned_vehicles.append(vehicle)
 		vehicleBodies.append(spawned_vehicles[player]._set_player_id(player))
+		print('setting Vehicle Bodies from player index'+str(player))
+		#await get_tree().create_timer(1).timeout
+		
+		var temp_spawn_ref:Node3D = spawn_points[player]
+		vehicleBodies[player].set_spawn_location(temp_spawn_ref)
+		print(player)
+		print(vehicleBodies[player])
+		print(SubViews[player])
 		vehicleBodies[player].viewportcover = SubViews[player]
 		cameras[player]._set_target(vehicleBodies[player])
+		if player == 3:
+			game_active = true
+	
 
 func _on_state_changed(new_state: GameManager.State) -> void:
-	game_active = new_state == GameManager.State.PLAY
 
 	if new_state == GameManager.State.WIN:
 		await get_tree().create_timer(2.0).timeout
