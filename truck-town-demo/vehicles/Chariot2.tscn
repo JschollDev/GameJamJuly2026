@@ -17,10 +17,9 @@
 [ext_resource type="ArrayMesh" uid="uid://ds3s43x5adquq" path="res://blender_exported_meshes/chariot/chariot_body_neck.res" id="14_yd2ny"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_l7i2k"]
-friction = 0.5
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x74tc"]
-size = Vector3(0.954078, 1, 4.796865)
+size = Vector3(1.5193422, 1.1574707, 4.796865)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_bpr2q"]
 random_pitch = 1.05
@@ -60,92 +59,98 @@ script = ExtResource("1_118sd")
 
 [node name="Body" type="VehicleBody3D" parent="." unique_id=325766941 groups=["car"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00169557, 0.222867, -0.0955184)
+mass = 100.0
 physics_material_override = SubResource("PhysicsMaterial_l7i2k")
+gravity_scale = 2.0
 center_of_mass_mode = 1
-center_of_mass = Vector3(0, -0.25, 0)
+center_of_mass = Vector3(0, -0.5, 0)
 script = ExtResource("1_m67tk")
-engine_force_value = 120.0
+engine_force_value = 200.0
 minimum_height = -30.0
 
-[node name="Wheel1" type="VehicleWheel3D" parent="Body" unique_id=966137444]
-transform = Transform3D(0.6248727, 0, 0, 0, 1, 0, 0, 0, 1, 0.8572838, -0.6770988, 3.2326148)
+[node name="fl" type="VehicleWheel3D" parent="Body" unique_id=966137444]
+transform = Transform3D(1.0935206, 0, 0, 0, 1, 0, 0, 0, 1, 1.279126, 0.28544247, 3.2391958)
+visible = false
 use_as_traction = true
 use_as_steering = true
-wheel_roll_influence = 1.0
-wheel_radius = 0.8
-wheel_friction_slip = 10.0
-suspension_travel = 5.0
-suspension_stiffness = 60.0
-damping_compression = 0.88
+wheel_radius = 0.675
+wheel_rest_length = 0.3
+wheel_friction_slip = 29.475
+suspension_travel = 0.5
+suspension_stiffness = 81.6
+suspension_max_force = 8000.0
+damping_compression = 0.61
 
-[node name="Wheel1" type="MeshInstance3D" parent="Body/Wheel1" unique_id=1257104377]
-visible = false
+[node name="Wheel1" type="MeshInstance3D" parent="Body/fl" unique_id=1257104377]
 layers = 2
 material_override = ExtResource("2_118sd")
 gi_mode = 2
 mesh = ExtResource("2_ye7l4")
 
-[node name="Wheel2" type="VehicleWheel3D" parent="Body" unique_id=1898822315]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3921577, 0.115169, -0.783403)
+[node name="bl" type="VehicleWheel3D" parent="Body" unique_id=1898822315]
+transform = Transform3D(2.3302472, 0, 0, 0, 1, 0, 0, 0, 1, 1.0619184, 0.2568053, -1.2572258)
 use_as_traction = true
-wheel_roll_influence = 1.0
-wheel_radius = 0.8
-wheel_friction_slip = 10.0
-suspension_travel = 5.0
-suspension_stiffness = 60.0
-damping_compression = 0.88
+wheel_radius = 0.675
+wheel_rest_length = 0.3
+wheel_friction_slip = 29.475
+suspension_travel = 0.5
+suspension_stiffness = 81.6
+suspension_max_force = 8000.0
+damping_compression = 0.61
 
-[node name="Wheel2" type="MeshInstance3D" parent="Body/Wheel2" unique_id=1248127195]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
+[node name="Wheel2" type="MeshInstance3D" parent="Body/bl" unique_id=1248127195]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003490448, 0, 0)
 layers = 2
 material_override = ExtResource("2_118sd")
 gi_mode = 2
 mesh = ExtResource("2_ye7l4")
 
-[node name="Wheel3" type="VehicleWheel3D" parent="Body" unique_id=1269318468]
-transform = Transform3D(0.6248727, 0, 0, 0, 1, 0, 0, 0, 1, -0.6584011, -0.6770988, 3.2326148)
+[node name="fr" type="VehicleWheel3D" parent="Body" unique_id=1269318468]
+transform = Transform3D(1.0935206, 0, 0, 0, 1, 0, 0, 0, 1, -1.1381525, 0.28544247, 3.2391958)
+visible = false
 use_as_traction = true
 use_as_steering = true
-wheel_roll_influence = 1.0
-wheel_radius = 0.8
-wheel_friction_slip = 10.0
-suspension_travel = 5.0
-suspension_stiffness = 60.0
-damping_compression = 0.88
+wheel_radius = 0.675
+wheel_rest_length = 0.3
+wheel_friction_slip = 29.475
+suspension_travel = 0.5
+suspension_stiffness = 81.6
+suspension_max_force = 8000.0
+damping_compression = 0.61
 
-[node name="Wheel3" type="MeshInstance3D" parent="Body/Wheel3" unique_id=829204557]
-visible = false
+[node name="Wheel3" type="MeshInstance3D" parent="Body/fr" unique_id=829204557]
 layers = 2
 material_override = ExtResource("2_118sd")
 gi_mode = 2
 mesh = ExtResource("3_118sd")
 
-[node name="Wheel4" type="VehicleWheel3D" parent="Body" unique_id=285153046]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3881406, 0.115169, -0.783403)
+[node name="br" type="VehicleWheel3D" parent="Body" unique_id=285153046]
+transform = Transform3D(2.3302472, 0, 0, 0, 1, 0, 0, 0, 1, -1.0584542, 0.2568053, -1.2572258)
 use_as_traction = true
-wheel_roll_influence = 1.0
-wheel_radius = 0.8
-wheel_friction_slip = 10.0
-suspension_travel = 5.0
-suspension_stiffness = 60.0
-damping_compression = 0.88
+wheel_radius = 0.675
+wheel_rest_length = 0.3
+wheel_friction_slip = 29.475
+suspension_travel = 0.5
+suspension_stiffness = 81.6
+suspension_max_force = 8000.0
+damping_compression = 0.61
 
-[node name="Wheel4" type="MeshInstance3D" parent="Body/Wheel4" unique_id=993561784]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
+[node name="Wheel4" type="MeshInstance3D" parent="Body/br" unique_id=993561784]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0045559406, 0, 0)
 layers = 2
 material_override = ExtResource("2_118sd")
 gi_mode = 2
 mesh = ExtResource("3_118sd")
 
 [node name="Body" type="MeshInstance3D" parent="Body" unique_id=397755799]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.37274665)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -0.37274665)
 layers = 2
 material_override = ExtResource("2_118sd")
 gi_mode = 2
 mesh = ExtResource("4_ye7l4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Body" unique_id=2103581638]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47936535, 0.98424166)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012911897, 0.61718273, 0.98424166)
 shape = SubResource("BoxShape3D_x74tc")
 
 [node name="EngineSound" type="AudioStreamPlayer3D" parent="Body" unique_id=706566980]
