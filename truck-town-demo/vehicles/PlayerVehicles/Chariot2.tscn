@@ -17,6 +17,7 @@
 [ext_resource type="ArrayMesh" uid="uid://ds3s43x5adquq" path="res://blender_exported_meshes/chariot/chariot_body_neck.res" id="14_yd2ny"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_l7i2k"]
+bounce = 0.25
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x74tc"]
 size = Vector3(1.5193422, 1.1574707, 4.796865)
@@ -175,6 +176,7 @@ bus = &"Vehicle"
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="Body" unique_id=938826726]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.201696, -0.022867, -1.10448)
+emitting = false
 amount = 125
 lifetime = 1.25
 mesh = SubResource("QuadMesh_30wks")

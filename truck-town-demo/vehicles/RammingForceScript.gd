@@ -1,9 +1,12 @@
-extends Area3D
+extends VehicleBody3D
 
-@export var force: Vector3 = Vector3(0, 20, 0)
+@export var repel_force := 10000.0
 
+func _physics_process(delta):
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		var body = collision.get_collider()
 
-func _on_body_entered(body: Node3D) -> void:
-	if body is RigidBody3D:
-		var offset: Vector3 = global_position - body.global_position
-		body.apply_impulse(force, offset)
+		if body is VehicleBody3D:
+			var dir = (body.global_position - global_position).normalized()
+			body.apply_central_force(dir * repel_force)
