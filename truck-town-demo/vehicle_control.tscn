@@ -1,0 +1,336 @@
+[gd_scene format=3 uid="uid://0lq5tiqfls4v"]
+
+[ext_resource type="FontFile" uid="uid://bxcg0iewa4okw" path="res://Fonts/Germania_One/GermaniaOne-Regular.ttf" id="1_xh5g7"]
+[ext_resource type="Texture2D" uid="uid://dq0xi7cao5pdj" path="res://Images/VehicleIcons/chariot_icon.png" id="2_s1pum"]
+[ext_resource type="Script" uid="uid://clngiqoln1huy" path="res://Control/vehicle_menu_control.gd" id="3_yx6vx"]
+[ext_resource type="Script" uid="uid://dgafcctt5dhep" path="res://car_select/CountDownScript.gd" id="5_5jw6k"]
+[ext_resource type="PackedScene" uid="uid://dd2ryqq6cqyg7" path="res://MainLevel.tscn" id="6_gmvtb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fjlp1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_p4kwu"]
+font = ExtResource("1_xh5g7")
+font_size = 160
+font_color = Color(0.8417316, 0.4594319, 0.3597349, 1)
+shadow_size = 21
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kpic3"]
+font = ExtResource("1_xh5g7")
+font_size = 65
+font_color = Color(0.9137255, 0.76862746, 0.41568628, 1)
+outline_color = Color(0.90588236, 0.43529412, 0.31764707, 1)
+shadow_size = 21
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_hnx47"]
+font = ExtResource("1_xh5g7")
+font_size = 46
+font_color = Color(0.16470589, 0.6156863, 0.56078434, 1)
+shadow_size = 21
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xnpdn"]
+font = ExtResource("1_xh5g7")
+font_size = 46
+font_color = Color(0.9137255, 0.76862746, 0.41568628, 1)
+shadow_size = 21
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_yuopv"]
+font = ExtResource("1_xh5g7")
+font_size = 46
+font_color = Color(0.95686275, 0.63529414, 0.38039216, 1)
+shadow_size = 21
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bd8th"]
+font = ExtResource("1_xh5g7")
+font_size = 46
+font_color = Color(0.90588236, 0.43529412, 0.31764707, 1)
+shadow_size = 21
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8d4cy"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_r2s6s"]
+font = ExtResource("1_xh5g7")
+font_size = 60
+font_color = Color(0.853878, 0.41061974, 0.3153471, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ren20"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_4espu"]
+font = ExtResource("1_xh5g7")
+font_size = 332
+font_color = Color(1, 0.65351003, 0.9129024, 1)
+outline_color = Color(0.90588236, 0.43529412, 0.31764707, 1)
+shadow_size = 21
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="VehicleControl" type="Control" unique_id=542381560]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=932103356]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.18431373, 0.68235296, 0.62352943, 1)
+
+[node name="MainMenu" type="Panel" parent="." unique_id=1877435953]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_fjlp1")
+
+[node name="Title" type="Label" parent="MainMenu" unique_id=479973062]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -576.0
+offset_right = 576.0
+offset_bottom = 23.0
+grow_horizontal = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 64)
+text = "WHEEL OF MISS-FORTUNE"
+label_settings = SubResource("LabelSettings_p4kwu")
+horizontal_alignment = 1
+
+[node name="CarContainer" type="HBoxContainer" parent="MainMenu" unique_id=1874614693]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Chariot" type="TextureRect" parent="MainMenu/CarContainer" unique_id=686729591]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 0.215)
+texture = ExtResource("2_s1pum")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MainMenu/CarContainer/Chariot" unique_id=8755536]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+text = "Chariot"
+label_settings = SubResource("LabelSettings_kpic3")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Chariot2" type="TextureRect" parent="MainMenu/CarContainer" unique_id=1436095870]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 0.215)
+texture = ExtResource("2_s1pum")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MainMenu/CarContainer/Chariot2" unique_id=219022848]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+text = "Chariot"
+label_settings = SubResource("LabelSettings_kpic3")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Chariot3" type="TextureRect" parent="MainMenu/CarContainer" unique_id=1069213225]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 0.215)
+texture = ExtResource("2_s1pum")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MainMenu/CarContainer/Chariot3" unique_id=860622828]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+text = "Chariot"
+label_settings = SubResource("LabelSettings_kpic3")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Chariot4" type="TextureRect" parent="MainMenu/CarContainer" unique_id=331068676]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 0.215)
+texture = ExtResource("2_s1pum")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MainMenu/CarContainer/Chariot4" unique_id=1659896373]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+text = "Chariot"
+label_settings = SubResource("LabelSettings_kpic3")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="P1_label" type="Label" parent="MainMenu" unique_id=1316609868]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 47.0
+offset_transform_enabled = true
+offset_transform_position = Vector2(50, 10)
+text = "Player 1"
+label_settings = SubResource("LabelSettings_hnx47")
+vertical_alignment = 1
+
+[node name="P2_label" type="Label" parent="MainMenu" unique_id=1190344321]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 47.0
+offset_transform_enabled = true
+offset_transform_position = Vector2(50, 50)
+text = "Player 2"
+label_settings = SubResource("LabelSettings_xnpdn")
+vertical_alignment = 1
+
+[node name="P3_label" type="Label" parent="MainMenu" unique_id=795175210]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 47.0
+offset_transform_enabled = true
+offset_transform_position = Vector2(50, 90)
+text = "Player 3"
+label_settings = SubResource("LabelSettings_yuopv")
+vertical_alignment = 1
+
+[node name="p4_label" type="Label" parent="MainMenu" unique_id=1567822840]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 47.0
+offset_transform_enabled = true
+offset_transform_position = Vector2(50, 130)
+text = "Player 4"
+label_settings = SubResource("LabelSettings_bd8th")
+vertical_alignment = 1
+
+[node name="LoadingPanel" type="PanelContainer" parent="." unique_id=74487555]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8d4cy")
+
+[node name="CenterContainer" type="CenterContainer" parent="LoadingPanel" unique_id=2090184981]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="LoadingPanel/CenterContainer" unique_id=133124888]
+layout_mode = 2
+text = "Loading...
+(this might take a while)"
+label_settings = SubResource("LabelSettings_r2s6s")
+horizontal_alignment = 1
+
+[node name="CarSelectBetter" type="Control" parent="." unique_id=1921292750 node_paths=PackedStringArray("loading_screen", "player_choice_outlines", "choice_locations", "player_choice_labels")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_yx6vx")
+loading_screen = NodePath("../LoadingPanel")
+player_choice_outlines = [NodePath("../MainMenu/P1_label"), NodePath("../MainMenu/P2_label"), NodePath("../MainMenu/P3_label"), NodePath("../MainMenu/p4_label")]
+choice_locations = [NodePath("../MainMenu/CarContainer/Chariot"), NodePath("../MainMenu/CarContainer/Chariot2"), NodePath("../MainMenu/CarContainer/Chariot3"), NodePath("../MainMenu/CarContainer/Chariot4")]
+player_choice_labels = [NodePath("../MainMenu/P1_label"), NodePath("../MainMenu/P2_label"), NodePath("../MainMenu/P3_label"), NodePath("../MainMenu/p4_label")]
+
+[node name="CountDown" type="Panel" parent="." unique_id=378055210 node_paths=PackedStringArray("countdown_label")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ren20")
+script = ExtResource("5_5jw6k")
+countdown_label = NodePath("Label")
+next_scene = ExtResource("6_gmvtb")
+
+[node name="Label" type="Label" parent="CountDown" unique_id=21362616]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+label_settings = SubResource("LabelSettings_4espu")
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -11,7 +11,6 @@
 [ext_resource type="Script" uid="uid://co8i5efymg07y" path="res://deathwheel.gd" id="9_0rh38"]
 [ext_resource type="Texture2D" uid="uid://1bpgfjpdasl5" path="res://Images/color_pallete.png" id="9_p40m6"]
 [ext_resource type="Script" uid="uid://ceo8eurpncpko" path="res://winnder_screen.gd" id="11_78kfj"]
-[ext_resource type="PackedScene" uid="uid://cgq7v1pxgrqtq" path="res://car_select/car_select.tscn" id="12_ivlct"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rj4so"]
 sky_top_color = Color(1, 0.9647059, 0.47843137, 1)
@@ -428,7 +427,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ivlct")
 script = ExtResource("11_78kfj")
-next_scene = ExtResource("12_ivlct")
 winner_label = NodePath("Winner")
 
 [node name="Winner" type="Label" parent="CountDown" unique_id=497181827]
