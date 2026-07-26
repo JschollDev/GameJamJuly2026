@@ -73,7 +73,8 @@ func change_player_choice(player_index: int, direction: int) -> bool:
 
 	if new_choice < 0 or new_choice >= CHOICE_COUNT:
 		return false
-
+	
+	GameManager._set_player_choice(player_index, new_choice)
 	player_choice[player_index] = new_choice
 	move_player_outline(player_index)
 
@@ -96,7 +97,7 @@ func move_player_outline(player_index: int) -> void:
 func lock_player_choice(player_index: int) -> void:
 	if player_choice_locked[player_index]:
 		return
-
+	
 	player_choice_locked[player_index] = true
 
 	if player_index < player_choice_labels.size():
