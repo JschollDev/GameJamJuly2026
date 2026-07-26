@@ -1,6 +1,6 @@
 extends Node
 
-@export var vehicles: Array[Node]
+@export var vehicles: Array[PackedScene]
 @export var cameras: Array[Camera3D]
 @export var vehicleBodies: Array[VehicleBody3D]
 @export var SubViews: Array[SubViewportContainer]
@@ -26,6 +26,9 @@ func _ready() -> void:
 		cameras[cam]._set_target(vehicleBodies[cam])
 	
 	GameManager.change_state(GameManager.State.PLAY)
+
+func _grab_player_vehicle_choice() -> void:
+	pass
 
 func _on_state_changed(new_state: GameManager.State) -> void:
 	game_active = new_state == GameManager.State.PLAY
