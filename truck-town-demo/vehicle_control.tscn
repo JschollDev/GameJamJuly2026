@@ -334,3 +334,14 @@ offset_transform_enabled = true
 label_settings = SubResource("LabelSettings_4espu")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="HACKYMCHACKFACE" type="Button" parent="." unique_id=551449211]
+layout_mode = 0
+offset_left = 277.0
+offset_top = 251.0
+offset_right = 1608.0
+offset_bottom = 389.0
+theme_override_font_sizes/font_size = 95
+text = "START GAME NOW ANYWAYS"
+
+[connection signal="button_up" from="HACKYMCHACKFACE" to="CarSelectBetter" method="_on_hackymchackface_button_up"]

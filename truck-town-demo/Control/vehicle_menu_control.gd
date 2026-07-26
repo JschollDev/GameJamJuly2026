@@ -102,7 +102,7 @@ func lock_player_choice(player_index: int) -> void:
 	)
 
 	if all_players_locked():
-		GameManager.change_state(GameManager.State.GET_READY)
+		start_game()
 
 
 func all_players_locked() -> bool:
@@ -115,4 +115,9 @@ func all_players_locked() -> bool:
 
 func start_game() -> void:
 	print("All players locked. Starting game.")
+	GameManager.change_state(GameManager.State.GET_READY)
 	
+
+
+func _on_hackymchackface_button_up() -> void:
+	start_game() # Replace with function body.
