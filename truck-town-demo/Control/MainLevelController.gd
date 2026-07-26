@@ -12,6 +12,7 @@ var winner: int
 var game_active: bool = true
 
 
+
 func _ready() -> void:
 	GameManager.state_changed.connect(_on_state_changed)
 
