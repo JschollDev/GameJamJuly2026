@@ -6,6 +6,8 @@ const BRAKE_STRENGTH = 2.0
 @export var controller_id: int = 0
 @export var viewportcover: SubViewportContainer
 @export var engine_force_value := 40.0
+@export var minimum_height: float = -10.0
+
 
 #var turbometer: Range
 #var turbo_animator: AnimationPlayer
@@ -21,18 +23,31 @@ var turn_right_input: float = 0.0
 var accelerate_input: float = 0.0
 var reverse_input: float = 0.0
 
+var start_transform: Transform3D
+
+
 @onready var desired_engine_pitch: float = $EngineSound.pitch_scale
 
 
 func _ready() -> void:
 	#assert(turbometer)
 	#assert(turbo_animator)
+	start_transform = global_transform
 	pass
 
 func _set_controller_id(pass_id: int) -> void:
 	controller_id = pass_id
 
 func _physics_process(delta: float) -> void:
+	
+	if global_position.y < minimum_height:
+		if self is RigidBody3D:
+			var body: RigidBody3D = self as RigidBody3D
+			body.linear_velocity = Vector3.ZERO
+			body.angular_velocity = Vector3.ZERO
+
+		global_transform = start_transform
+	
 	_steer_target = turn_left_input - turn_right_input
 	_steer_target *= STEER_LIMIT
 
