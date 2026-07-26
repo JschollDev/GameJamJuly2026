@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://bxcg0iewa4okw" path="res://Fonts/Germania_One/GermaniaOne-Regular.ttf" id="3_ri6rb"]
 [ext_resource type="Script" uid="uid://8m1gckfogs7n" path="res://fade_away.gd" id="6_m50br"]
 [ext_resource type="Texture2D" uid="uid://de6807jhd42i5" path="res://Images/KennyControlsIcons/Steam Controller/Vector/steam_button_y.svg" id="7_p40m6"]
+[ext_resource type="Texture2D" uid="uid://blflwcc6xnqwb" path="res://Images/KennyControlsIcons/Steam Controller/Vector/steam_lt.svg" id="8_ivlct"]
 [ext_resource type="Script" uid="uid://co8i5efymg07y" path="res://deathwheel.gd" id="9_0rh38"]
 [ext_resource type="Texture2D" uid="uid://1bpgfjpdasl5" path="res://Images/color_pallete.png" id="9_p40m6"]
 [ext_resource type="Script" uid="uid://ceo8eurpncpko" path="res://winnder_screen.gd" id="11_78kfj"]
@@ -351,7 +352,7 @@ expand_mode = 4
 [node name="Tip" type="Label" parent="SplitScreen/Panel/VBoxContainer/HBoxContainer" unique_id=826526798]
 layout_mode = 2
 offset_transform_position = Vector2(32, 0)
-text = "Flash your Viewport"
+text = "Which Screen Am I?"
 label_settings = SubResource("LabelSettings_0rh38")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -374,6 +375,24 @@ label_settings = SubResource("LabelSettings_0rh38")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="HBoxContainer4" type="HBoxContainer" parent="SplitScreen/Panel/VBoxContainer" unique_id=2081762198]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="SplitScreen/Panel/VBoxContainer/HBoxContainer4" unique_id=38178721]
+custom_maximum_size = Vector2(99, 99)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_ivlct")
+expand_mode = 4
+
+[node name="Tip" type="Label" parent="SplitScreen/Panel/VBoxContainer/HBoxContainer4" unique_id=1123844670]
+layout_mode = 2
+offset_transform_position = Vector2(32, 0)
+text = "Stop / Reverse"
+label_settings = SubResource("LabelSettings_0rh38")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="HBoxContainer3" type="HBoxContainer" parent="SplitScreen/Panel/VBoxContainer" unique_id=1065941874]
 layout_mode = 2
 
@@ -387,7 +406,7 @@ expand_mode = 4
 [node name="Tip" type="Label" parent="SplitScreen/Panel/VBoxContainer/HBoxContainer3" unique_id=1469470044]
 layout_mode = 2
 offset_transform_position = Vector2(32, 0)
-text = "Left Control Stick to Steer"
+text = "Left Stick Steers"
 label_settings = SubResource("LabelSettings_0rh38")
 horizontal_alignment = 1
 vertical_alignment = 1

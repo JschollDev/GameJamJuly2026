@@ -19,7 +19,7 @@ var town: Node3D = null
 
 
 func _ready() -> void:
-	await get_tree().create_timer(.2).timeout
+	await get_tree().create_timer(.05).timeout
 	for player_index in PLAYER_COUNT:
 		change_player_choice(player_index, 0)
 		move_player_outline(player_index)
@@ -116,17 +116,3 @@ func all_players_locked() -> bool:
 func start_game() -> void:
 	print("All players locked. Starting game.")
 	
-func _load_scene(car_scene: PackedScene) -> void:
-	# Show loading screen and wait for it to be rendered
-	loading_screen.visible = true
-	await RenderingServer.frame_post_draw
-
-	var car: Node3D = car_scene.instantiate()
-	car.name = "car"
-	town = preload("res://town/town_scene.tscn").instantiate()
-
-
-	town.setup()
-
-	get_parent().add_child(town)
-	hide()
