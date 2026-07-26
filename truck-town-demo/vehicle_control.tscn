@@ -125,7 +125,7 @@ offset_bottom = 23.0
 grow_horizontal = 2
 offset_transform_enabled = true
 offset_transform_position = Vector2(0, 64)
-text = "WHEEL OF MISS-FORTUNE"
+text = "WHEEL OF MISSED-FORTUNE"
 label_settings = SubResource("LabelSettings_p4kwu")
 horizontal_alignment = 1
 

@@ -66,7 +66,7 @@ center_of_mass_mode = 1
 center_of_mass = Vector3(0, -0.41, 0)
 script = ExtResource("1_m67tk")
 engine_force_value = 200.0
-minimum_height = -30.0
+minimum_height = -45.0
 honking_honker = NodePath("HonkSound")
 
 [node name="fl" type="VehicleWheel3D" parent="Body" unique_id=966137444]

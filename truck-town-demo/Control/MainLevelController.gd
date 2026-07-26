@@ -33,6 +33,7 @@ func _on_state_changed(new_state: GameManager.State) -> void:
 		await get_tree().create_timer(2.0).timeout
 		GameManager.change_state(GameManager.State.SELECTION_SCREEN)
 		get_tree().change_scene_to_file("res://vehicle_control.tscn")
+		
 
 func _physics_process(_delta: float) -> void:
 	if not game_active:

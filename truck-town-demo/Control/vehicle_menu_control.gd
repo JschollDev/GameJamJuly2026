@@ -8,7 +8,7 @@ var vehicle_choice: Array[int] = [1, 2, 3, 4]
 var player_choice: Array[int] = [0, 0, 0, 0]
 var player_choice_locked: Array[bool] = [false, false, false, false]
 var player_last_change_time: Array[int] = [0, 0, 0, 0]
-
+var reset := true
 var town: Node3D = null
 
 @export var loading_screen: PanelContainer
@@ -24,7 +24,16 @@ func _ready() -> void:
 		change_player_choice(player_index, 0)
 		move_player_outline(player_index)
 	GameManager.change_state(GameManager.State.SELECTION_SCREEN)
+	
+func _physics_process(_delta: float) -> void:
+	if GameManager.current_state == GameManager.State.SELECTION_SCREEN:
+		for player_index in PLAYER_COUNT:
+			change_player_choice(player_index, 0)
 
+		await get_tree().create_timer(1.0).timeout
+
+		for player_index in PLAYER_COUNT:
+			move_player_outline(player_index)
 
 func _input(event: InputEvent) -> void:
 	if not event is InputEventJoypadButton and not event is InputEventJoypadMotion:
@@ -103,6 +112,7 @@ func lock_player_choice(player_index: int) -> void:
 
 	if all_players_locked():
 		start_game()
+		reset = false
 
 
 func all_players_locked() -> bool:
