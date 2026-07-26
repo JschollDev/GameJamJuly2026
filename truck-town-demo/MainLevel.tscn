@@ -12,10 +12,11 @@
 [ext_resource type="Texture2D" uid="uid://de6807jhd42i5" path="res://Images/KennyControlsIcons/Steam Controller/Vector/steam_button_y.svg" id="7_p40m6"]
 [ext_resource type="Texture2D" uid="uid://blflwcc6xnqwb" path="res://Images/KennyControlsIcons/Steam Controller/Vector/steam_lt.svg" id="8_ivlct"]
 [ext_resource type="Texture2D" uid="uid://d2t1lo0p568q2" path="res://Images/KennyControlsIcons/Steam Controller/Double/steam_stick.png" id="9_ivlct"]
-[ext_resource type="Texture2D" uid="uid://1bpgfjpdasl5" path="res://Images/color_pallete.png" id="9_p40m6"]
 [ext_resource type="Texture2D" uid="uid://ivotupur1iw3" path="res://Images/KennyControlsIcons/Steam Controller/Vector/steam_button_x.svg" id="10_d1soc"]
 [ext_resource type="Script" uid="uid://ceo8eurpncpko" path="res://winnder_screen.gd" id="11_78kfj"]
 [ext_resource type="ArrayMesh" uid="uid://dwqs4mypv520j" path="res://cone_res_save.res" id="13_l7u77"]
+[ext_resource type="Texture2D" uid="uid://32bnm6ksdyl2" path="res://Images/ground.png" id="16_puqvf"]
+[ext_resource type="Texture2D" uid="uid://kvlqnwnbw81n" path="res://Images/ground_normal.png" id="17_cmshu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rj4so"]
 sky_top_color = Color(1, 0.9647059, 0.47843137, 1)
@@ -117,8 +118,12 @@ shadow_size = 21
 shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_78kfj"]
-albedo_texture = ExtResource("9_p40m6")
-uv1_scale = Vector3(8.55, 8.55, 8.55)
+albedo_texture = ExtResource("16_puqvf")
+roughness = 0.46
+roughness_texture = ExtResource("17_cmshu")
+normal_enabled = true
+normal_texture = ExtResource("17_cmshu")
+uv1_scale = Vector3(1.565, 1.565, 1.565)
 uv1_triplanar = true
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_d1soc"]
