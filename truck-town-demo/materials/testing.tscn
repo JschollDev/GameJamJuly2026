@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b287olj1qknxh"]
 
 [ext_resource type="Script" uid="uid://bwr55kn64s3tk" path="res://testing_cam_script.gd" id="1_i5qvr"]
-[ext_resource type="PackedScene" uid="uid://folceuqvupuk" path="res://vehicles/PlayerVehicles/Boat.tscn" id="2_i5qvr"]
+[ext_resource type="PackedScene" uid="uid://c6ou7g0q2wv3n" path="res://vehicles/PlayerVehicles/Rockcar.tscn" id="2_i5qvr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8jl7o"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -52,9 +52,9 @@ shape = SubResource("ConcavePolygonShape3D_f7i8r")
 mesh = SubResource("BoxMesh_0f5ca")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1985591696 node_paths=PackedStringArray("target_parent")]
-transform = Transform3D(1, -2.2626677e-08, -2.9788523e-09, 2.2626676e-08, 0.9659259, 0.25881907, -2.9788652e-09, -0.25881907, 0.9659258, 4.2617846, -84.2162, -5.255547)
+transform = Transform3D(1, -2.2626677e-08, -2.9788523e-09, 2.2626676e-08, 0.9659259, 0.25881907, -2.9788652e-09, -0.25881907, 0.9659258, 2.2908697, -85.60518, -4.230014)
 script = ExtResource("1_i5qvr")
 target_parent = NodePath("../CarBase")
 
 [node name="CarBase" parent="." unique_id=340126786 instance=ExtResource("2_i5qvr")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 4.405552, -87.994194, -9.39592)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.3623652, -89.80205, -8.583205)
