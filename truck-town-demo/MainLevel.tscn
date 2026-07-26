@@ -429,7 +429,7 @@ script = ExtResource("9_0rh38")
 rotation_speed = 0.2
 
 [node name="Cylinder" type="MeshInstance3D" parent="rings" unique_id=2019996820]
-transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
+transform = Transform3D(200.91574, 0, 0, 0, -2.7292937e-05, 31.706038, 0, -228.94975, -3.7796542e-06, 0, 0, 0)
 mesh = SubResource("ArrayMesh_6eddl")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="rings/Cylinder" unique_id=356453465]
