@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cyyle6l5n4oim" path="res://Control/MainLevelController.gd" id="1_fi62q"]
 [ext_resource type="Shader" uid="uid://wrdevexoyuy5" path="res://whoami.gdshader" id="2_cb5hs"]
-[ext_resource type="PackedScene" uid="uid://cc6x4eua15r43" path="res://vehicles/Chariot2.tscn" id="2_o3cl4"]
+[ext_resource type="PackedScene" uid="uid://cc6x4eua15r43" path="res://vehicles/PlayerVehicles/Chariot2.tscn" id="2_o3cl4"]
 [ext_resource type="Script" uid="uid://bebqhip6e8ocm" path="res://ProfessionalCamera.gd" id="2_rlx2o"]
 [ext_resource type="Script" uid="uid://c8bacvt7ynq6e" path="res://whoami.gd" id="2_taiwb"]
 [ext_resource type="FontFile" uid="uid://bxcg0iewa4okw" path="res://Fonts/Germania_One/GermaniaOne-Regular.ttf" id="3_ri6rb"]
@@ -408,16 +408,16 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Player1" parent="." unique_id=340126786 instance=ExtResource("2_o3cl4")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 47.905243, 3.0695038, 0)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 67.90524, 14.069504, 0)
 
 [node name="Player2" parent="." unique_id=1384655623 instance=ExtResource("2_o3cl4")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -44.143097, 3.0695038, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.1431, 14.069504, 0)
 
 [node name="Player3" parent="." unique_id=1640202880 instance=ExtResource("2_o3cl4")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 3.0695038, 40.709908)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 11.069504, 61.709908)
 
 [node name="Player4" parent="." unique_id=969573952 instance=ExtResource("2_o3cl4")]
-transform = Transform3D(1, 0, -2.7818132e-08, 0, 1, 0, 2.7818132e-08, 0, 1, 0, 3.0695038, -46.45868)
+transform = Transform3D(0, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, 0, 0, 13.069504, -62.45868)
 
 [node name="CountDown" type="Panel" parent="." unique_id=1384288914 node_paths=PackedStringArray("winner_label")]
 visible = false
@@ -458,7 +458,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="deathcone" type="Node3D" parent="." unique_id=1153549146]
-transform = Transform3D(5.394872, 0, 0, 0, 5.394872, 0, 0, 0, 5.394872, 0, 0, 0)
+transform = Transform3D(4.12, 0, 0, 0, 4.12, 0, 0, 0, 4.12, 0, 7.474495, 0)
 
 [node name="Sphere" type="MeshInstance3D" parent="deathcone" unique_id=721152806]
 transform = Transform3D(23.537727, 0, 0, 0, 6.9530935, 0, 0, 0, 23.537727, 0, 0, 0)

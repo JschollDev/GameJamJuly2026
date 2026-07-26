@@ -1,41 +1,42 @@
-[gd_scene format=3 uid="uid://cc6x4eua15r43"]
+[gd_scene format=3 uid="uid://folceuqvupuk"]
 
-[ext_resource type="Script" uid="uid://bdnemq57yn5nt" path="res://vehicles/spawn_hotfix.gd" id="1_118sd"]
-[ext_resource type="Script" uid="uid://g2bo8a5av2sn" path="res://vehicles/vehicle.gd" id="1_m67tk"]
-[ext_resource type="Material" uid="uid://d3rh33v18jcj6" path="res://materials/master_material.tres" id="2_118sd"]
-[ext_resource type="ArrayMesh" uid="uid://bbyol3vxnxl5e" path="res://blender_exported_meshes/chariot/chariot_wheel_left.res" id="2_ye7l4"]
-[ext_resource type="ArrayMesh" uid="uid://b1ar6ip7p2ptj" path="res://blender_exported_meshes/chariot/chariot_wheel_right.res" id="3_118sd"]
-[ext_resource type="ArrayMesh" uid="uid://belak24qcbn58" path="res://blender_exported_meshes/chariot/chariot_body.res" id="4_ye7l4"]
-[ext_resource type="AudioStream" uid="uid://bwmbj0hptxpp2" path="res://vehicles/impact_1.wav" id="6_q8rog"]
-[ext_resource type="AudioStream" uid="uid://b18h41n48lfar" path="res://Audio/rolling_tire_on_grav.wav" id="6_yd2ny"]
-[ext_resource type="AudioStream" uid="uid://g504na8iwq65" path="res://vehicles/impact_2.wav" id="7_mxwlm"]
-[ext_resource type="AudioStream" uid="uid://cnrem1y1qiu0m" path="res://vehicles/impact_3.wav" id="8_7l5n3"]
-[ext_resource type="AudioStream" uid="uid://dyq28bk7fqj44" path="res://vehicles/impact_4.wav" id="9_42k8u"]
-[ext_resource type="AudioStream" uid="uid://2kuq7xwmeuhj" path="res://vehicles/honk_2.wav" id="10_fuhxi"]
-[ext_resource type="Texture2D" uid="uid://yexl3pkv5tea" path="res://vehicles/particle_smoke.png" id="11_4vbav"]
-[ext_resource type="Texture2D" uid="uid://c6nommjyxiscs" path="res://vehicles/blob_shadow.png" id="12_u56fx"]
-[ext_resource type="ArrayMesh" uid="uid://ds3s43x5adquq" path="res://blender_exported_meshes/chariot/chariot_body_neck.res" id="14_yd2ny"]
+[ext_resource type="Script" uid="uid://bdnemq57yn5nt" path="res://vehicles/spawn_hotfix.gd" id="1_ps8ya"]
+[ext_resource type="Script" uid="uid://g2bo8a5av2sn" path="res://vehicles/vehicle.gd" id="2_yr7f0"]
+[ext_resource type="Material" uid="uid://d3rh33v18jcj6" path="res://materials/master_material.tres" id="3_1q366"]
+[ext_resource type="ArrayMesh" uid="uid://bbyol3vxnxl5e" path="res://blender_exported_meshes/chariot/chariot_wheel_left.res" id="4_ryy84"]
+[ext_resource type="ArrayMesh" uid="uid://b1ar6ip7p2ptj" path="res://blender_exported_meshes/chariot/chariot_wheel_right.res" id="5_7hstv"]
+[ext_resource type="ArrayMesh" uid="uid://b1toyierblwv5" path="res://BlenderModelsExported/BoatyMcBoatFace.res" id="6_ps8ya"]
+[ext_resource type="AudioStream" uid="uid://b18h41n48lfar" path="res://Audio/rolling_tire_on_grav.wav" id="7_y5dvu"]
+[ext_resource type="AudioStream" uid="uid://bwmbj0hptxpp2" path="res://vehicles/impact_1.wav" id="8_6ccb5"]
+[ext_resource type="AudioStream" uid="uid://g504na8iwq65" path="res://vehicles/impact_2.wav" id="9_mw18y"]
+[ext_resource type="AudioStream" uid="uid://cnrem1y1qiu0m" path="res://vehicles/impact_3.wav" id="10_smlc0"]
+[ext_resource type="AudioStream" uid="uid://dyq28bk7fqj44" path="res://vehicles/impact_4.wav" id="11_pc3ai"]
+[ext_resource type="AudioStream" uid="uid://2kuq7xwmeuhj" path="res://vehicles/honk_2.wav" id="12_4g711"]
+[ext_resource type="Texture2D" uid="uid://yexl3pkv5tea" path="res://vehicles/particle_smoke.png" id="13_f67w8"]
+[ext_resource type="Texture2D" uid="uid://c6nommjyxiscs" path="res://vehicles/blob_shadow.png" id="14_1ydvn"]
+[ext_resource type="ArrayMesh" uid="uid://ds3s43x5adquq" path="res://blender_exported_meshes/chariot/chariot_body_neck.res" id="15_8b7oq"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_l7i2k"]
+bounce = 0.25
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x74tc"]
-size = Vector3(1.5193422, 1.1574707, 4.796865)
+size = Vector3(1.5193422, 1.1574707, 6.8237257)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_bpr2q"]
 random_pitch = 1.05
 random_volume_offset_db = 2.0
 streams_count = 4
-stream_0/stream = ExtResource("6_q8rog")
-stream_1/stream = ExtResource("7_mxwlm")
-stream_2/stream = ExtResource("8_7l5n3")
-stream_3/stream = ExtResource("9_42k8u")
+stream_0/stream = ExtResource("8_6ccb5")
+stream_1/stream = ExtResource("9_mw18y")
+stream_2/stream = ExtResource("10_smlc0")
+stream_3/stream = ExtResource("11_pc3ai")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fuuj3"]
 transparency = 1
 shading_mode = 0
 vertex_color_use_as_albedo = true
 albedo_color = Color(0.462745, 0.462745, 0.462745, 0.501961)
-albedo_texture = ExtResource("11_4vbav")
+albedo_texture = ExtResource("13_f67w8")
 billboard_mode = 3
 billboard_keep_scale = true
 particles_anim_h_frames = 1
@@ -55,7 +56,7 @@ point_count = 2
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [node name="CarBase" type="Node3D" unique_id=340126786]
-script = ExtResource("1_118sd")
+script = ExtResource("1_ps8ya")
 
 [node name="Body" type="VehicleBody3D" parent="." unique_id=325766941 node_paths=PackedStringArray("honking_honker") groups=["car"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00169557, 0.222867, -0.0955184)
@@ -64,14 +65,13 @@ physics_material_override = SubResource("PhysicsMaterial_l7i2k")
 gravity_scale = 2.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, -0.41, 0)
-script = ExtResource("1_m67tk")
+script = ExtResource("2_yr7f0")
 engine_force_value = 200.0
-minimum_height = -45.0
+minimum_height = -30.0
 honking_honker = NodePath("HonkSound")
 
 [node name="fl" type="VehicleWheel3D" parent="Body" unique_id=966137444]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5734889, 0.28544247, 3.2391958)
-visible = false
 use_as_traction = true
 use_as_steering = true
 wheel_radius = 0.675
@@ -84,9 +84,9 @@ damping_compression = 0.61
 
 [node name="Wheel1" type="MeshInstance3D" parent="Body/fl" unique_id=1257104377]
 layers = 2
-material_override = ExtResource("2_118sd")
+material_override = ExtResource("3_1q366")
 gi_mode = 2
-mesh = ExtResource("2_ye7l4")
+mesh = ExtResource("4_ryy84")
 
 [node name="bl" type="VehicleWheel3D" parent="Body" unique_id=1898822315]
 transform = Transform3D(2.1020107, 0, 0, 0, 1, 0, 0, 0, 1, 0.95807827, 0.2568053, -1.2572258)
@@ -103,13 +103,12 @@ damping_compression = 0.61
 [node name="Wheel2" type="MeshInstance3D" parent="Body/bl" unique_id=1248127195]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003490448, 0, 0)
 layers = 2
-material_override = ExtResource("2_118sd")
+material_override = ExtResource("3_1q366")
 gi_mode = 2
-mesh = ExtResource("2_ye7l4")
+mesh = ExtResource("4_ryy84")
 
 [node name="fr" type="VehicleWheel3D" parent="Body" unique_id=1269318468]
 transform = Transform3D(0.4550929, 0, 0, 0, 1, 0, 0, 0, 1, -0.4325152, 0.28544247, 3.2391958)
-visible = false
 use_as_traction = true
 use_as_steering = true
 wheel_radius = 0.675
@@ -122,9 +121,9 @@ damping_compression = 0.61
 
 [node name="Wheel3" type="MeshInstance3D" parent="Body/fr" unique_id=829204557]
 layers = 2
-material_override = ExtResource("2_118sd")
+material_override = ExtResource("3_1q366")
 gi_mode = 2
-mesh = ExtResource("3_118sd")
+mesh = ExtResource("5_7hstv")
 
 [node name="br" type="VehicleWheel3D" parent="Body" unique_id=285153046]
 transform = Transform3D(2.1020107, 0, 0, 0, 1, 0, 0, 0, 1, -0.9546139, 0.2568053, -1.2572258)
@@ -141,23 +140,23 @@ damping_compression = 0.61
 [node name="Wheel4" type="MeshInstance3D" parent="Body/br" unique_id=993561784]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0045559406, 0, 0)
 layers = 2
-material_override = ExtResource("2_118sd")
+material_override = ExtResource("3_1q366")
 gi_mode = 2
-mesh = ExtResource("3_118sd")
+mesh = ExtResource("5_7hstv")
 
 [node name="Body" type="MeshInstance3D" parent="Body" unique_id=397755799]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -0.37274665)
+transform = Transform3D(-0.485, 0, -7.323297e-08, 0, 0.485, 0, 7.323297e-08, 0, -0.485, 0, 0, -0.18576902)
 layers = 2
-material_override = ExtResource("2_118sd")
+material_override = ExtResource("3_1q366")
 gi_mode = 2
-mesh = ExtResource("4_ye7l4")
+mesh = ExtResource("6_ps8ya")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Body" unique_id=2103581638]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012911897, 0.61718273, 0.98424166)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012911897, 0.61718273, -0.02918858)
 shape = SubResource("BoxShape3D_x74tc")
 
 [node name="EngineSound" type="AudioStreamPlayer" parent="Body" unique_id=793895872]
-stream = ExtResource("6_yd2ny")
+stream = ExtResource("7_y5dvu")
 pitch_scale = 0.05
 autoplay = true
 bus = &"Vehicle"
@@ -168,13 +167,14 @@ max_polyphony = 3
 bus = &"Vehicle"
 
 [node name="HonkSound" type="AudioStreamPlayer" parent="Body" unique_id=760700504]
-stream = ExtResource("10_fuhxi")
+stream = ExtResource("12_4g711")
 volume_db = 13.0
 pitch_scale = 0.61
 bus = &"Vehicle"
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="Body" unique_id=938826726]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.201696, -0.022867, -1.10448)
+emitting = false
 amount = 125
 lifetime = 1.25
 mesh = SubResource("QuadMesh_30wks")
@@ -191,7 +191,7 @@ color_ramp = SubResource("Gradient_p5xtl")
 [node name="BlobShadow" type="Decal" parent="Body" unique_id=223759031]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05)
 size = Vector3(1.6, 4, 3)
-texture_albedo = ExtResource("12_u56fx")
+texture_albedo = ExtResource("14_1ydvn")
 upper_fade = 2.0
 lower_fade = 1.0
 cull_mask = 1048573
@@ -224,5 +224,5 @@ transform = Transform3D(-1, 8.74228e-08, 0, 3.82137e-15, 4.37114e-08, 1, 8.74228
 
 [node name="ChariotBodyNeck" type="MeshInstance3D" parent="Body" unique_id=1474903337]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.0677523, 0.1835107, -0.055612154)
-material_override = ExtResource("2_118sd")
-mesh = ExtResource("14_yd2ny")
+material_override = ExtResource("3_1q366")
+mesh = ExtResource("15_8b7oq")
