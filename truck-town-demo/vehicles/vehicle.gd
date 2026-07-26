@@ -8,6 +8,8 @@ const BRAKE_STRENGTH = 2.0
 @export var engine_force_value := 40.0
 @export var minimum_height: float = -10.0
 
+@export var honking_honker: AudioStreamPlayer
+
 
 #var turbometer: Range
 #var turbo_animator: AnimationPlayer
@@ -141,8 +143,9 @@ func _input(p_input_event: InputEvent) -> void:
 		viewportcover.flash()
 		
 
-	if p_input_event.is_action_pressed(&"honk"):
-		$HonkSound.play()
+	if p_input_event.is_action(&"honk", true):
+		print("honk honk")
+		honking_honker.play()
 
 
 func toggle_headlights() -> void:
