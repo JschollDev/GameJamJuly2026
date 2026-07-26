@@ -2,7 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://dq0xi7cao5pdj" path="res://Images/VehicleIcons/chariot_icon.png" id="4_8injy"]
 [ext_resource type="Script" uid="uid://xlo71cd8nyle" path="res://car_select/fast_fix_testing.gd" id="4_68v1x"]
+[ext_resource type="Script" uid="uid://dgafcctt5dhep" path="res://car_select/CountDownScript.gd" id="5_6xe50"]
 [ext_resource type="FontFile" uid="uid://bxcg0iewa4okw" path="res://Fonts/Germania_One/GermaniaOne-Regular.ttf" id="5_uu0k4"]
+[ext_resource type="PackedScene" uid="uid://dd2ryqq6cqyg7" path="res://MainLevel.tscn" id="6_8injy"]
 [ext_resource type="Script" uid="uid://clngiqoln1huy" path="res://Control/vehicle_menu_control.gd" id="8_y5qrv"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_68v1x"]
@@ -68,6 +70,26 @@ font_size = 60
 font_color = Color(0.853878, 0.41061974, 0.3153471, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p40m6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_68v1x"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_68v1x"]
+font = ExtResource("5_uu0k4")
+font_size = 332
+font_color = Color(1, 0.65351003, 0.9129024, 1)
+outline_color = Color(0.90588236, 0.43529412, 0.31764707, 1)
+shadow_size = 21
+shadow_color = Color(0, 0, 0, 1)
 
 [node name="CarSelect" type="Control" unique_id=278128104]
 layout_mode = 3
@@ -304,5 +326,30 @@ theme_override_font_sizes/font_size = 83
 theme_override_styles/normal = SubResource("StyleBoxEmpty_p40m6")
 text = "TESTING SKIP TO MAP"
 script = ExtResource("4_68v1x")
+
+[node name="CountDown" type="Panel" parent="." unique_id=1581704280 node_paths=PackedStringArray("countdown_label")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_68v1x")
+script = ExtResource("5_6xe50")
+countdown_label = NodePath("Label")
+next_scene = ExtResource("6_8injy")
+
+[node name="Label" type="Label" parent="CountDown" unique_id=1256854179]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+label_settings = SubResource("LabelSettings_68v1x")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="button_down" from="Button" to="Button" method="_on_button_down"]

@@ -12,6 +12,7 @@ const BRAKE_STRENGTH = 2.0
 #var turbometer: Range
 #var turbo_animator: AnimationPlayer
 
+var input_enabled := true
 var previous_speed := linear_velocity.length()
 var turbo_active := true
 var headlights_active := false
@@ -39,14 +40,18 @@ func _set_controller_id(pass_id: int) -> void:
 	controller_id = pass_id
 
 func _physics_process(delta: float) -> void:
+	if not input_enabled:
+		return
 	
+	# POSITON RESET CODE
 	if global_position.y < minimum_height:
-		if self is RigidBody3D:
-			var body: RigidBody3D = self as RigidBody3D
-			body.linear_velocity = Vector3.ZERO
-			body.angular_velocity = Vector3.ZERO
-
-		global_transform = start_transform
+		input_enabled = false
+		#if self is RigidBody3D:
+			#var body: RigidBody3D = self as RigidBody3D
+			#body.linear_velocity = Vector3.ZERO
+			#body.angular_velocity = Vector3.ZERO
+#
+		#global_transform = start_transform
 	
 	_steer_target = turn_left_input - turn_right_input
 	_steer_target *= STEER_LIMIT

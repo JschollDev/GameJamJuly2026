@@ -22,7 +22,8 @@ func _ready() -> void:
 	await get_tree().create_timer(.2).timeout
 	for player_index in PLAYER_COUNT:
 		change_player_choice(player_index, 0)
-		move_player_outline(player_index)		
+		move_player_outline(player_index)
+	GameManager.change_state(GameManager.State.SELECTION_SCREEN)
 
 
 func _input(event: InputEvent) -> void:
@@ -101,7 +102,7 @@ func lock_player_choice(player_index: int) -> void:
 	)
 
 	if all_players_locked():
-		start_game()
+		GameManager.change_state(GameManager.State.GET_READY)
 
 
 func all_players_locked() -> bool:
